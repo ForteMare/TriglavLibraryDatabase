@@ -6,6 +6,7 @@ package gui;
 
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
+import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -114,8 +115,11 @@ public class AddItemBox {
                 int userYear = Integer.parseInt(yearInput.getText());
                 String userDDC = ddcInput.getText();
 
-                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
-                b1.setAvailability(userAvailability);
+                String userLanguage = languageInput.getValue();
+
+                Novel n1 = new Novel(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userLanguage);
+                n1.setAvailability(userAvailability);
+                n1.addToDatabase();
 
                 primaryStage.close();
 
