@@ -51,7 +51,6 @@ public class Novel extends Book {
     public StringBuilder returnFinalInfo() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnFinalInfo())
-                .append("\r\n")
                 .append("Language: ")
                 .append(getLanguage())
                 .append("\r\n");
