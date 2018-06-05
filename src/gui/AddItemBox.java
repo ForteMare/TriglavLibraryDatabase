@@ -404,6 +404,8 @@ public class AddItemBox {
                 ChildrensLiterature cl1 = new ChildrensLiterature(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userIllustration, userInteractive);
                 cl1.setAvailability(userAvailability);
 
+                cl1.addToDatabase();
+
                 primaryStage.close();
 
             } catch (Exception e) {
@@ -1542,6 +1544,8 @@ public class AddItemBox {
 
                 Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
                 b1.setAvailability(userAvailability);
+
+                b1.addToDatabase();
 
                 primaryStage.close();
 
