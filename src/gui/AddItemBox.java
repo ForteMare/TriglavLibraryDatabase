@@ -6,6 +6,7 @@ package gui;
 
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
+import inventory.print.book.TouristGuide;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -247,7 +248,7 @@ public class AddItemBox {
 
         accept.setOnAction(event -> {
 
-            // Book information
+            // Tourist guide information
             try {
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
@@ -257,8 +258,12 @@ public class AddItemBox {
                 int userYear = Integer.parseInt(yearInput.getText());
                 String userDDC = ddcInput.getText();
 
-                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
-                b1.setAvailability(userAvailability);
+                String userRegion = regionInput.getValue();
+                boolean userMaps = mapInput.isSelected();
+
+                TouristGuide tg1 = new TouristGuide(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userRegion, userMaps);
+                tg1.setAvailability(userAvailability);
+                tg1.addToDatabase();
 
                 primaryStage.close();
 
