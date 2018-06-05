@@ -1466,18 +1466,24 @@ public class AddItemBox {
         accept.setOnAction(event -> {
 
             // Book information
-            String userAvailability = availableInput.getValue();
-            String userTitle = titleInput.getText();
-            String userAuthor = authorInput.getText();
-            String userSubtype = subTypeInput.getValue();
-            boolean userHardCover = hardCoverInput.isSelected();
-            int userYear = Integer.parseInt(yearInput.getText());
-            String userDDC = ddcInput.getText();
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+                boolean userHardCover = hardCoverInput.isSelected();
+                int userYear = Integer.parseInt(yearInput.getText());
+                String userDDC = ddcInput.getText();
 
-            Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
-            b1.setAvailability(userAvailability);
 
-            primaryStage.close();
+                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
+                b1.setAvailability(userAvailability);
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programError(e.toString());
+            }
         });
         reject.setOnAction(event -> primaryStage.close());
 
