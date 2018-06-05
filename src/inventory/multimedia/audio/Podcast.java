@@ -25,9 +25,6 @@ public class Podcast extends Audio {
         this.featuredOnItunes = featuredOnItunes;
         setInternalID(18);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addPodcast(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isAvailableOffline() {
@@ -44,6 +41,12 @@ public class Podcast extends Audio {
 
     public void setFeaturedOnItunes(boolean featuredOnItunes) {
         this.featuredOnItunes = featuredOnItunes;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addPodcast(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

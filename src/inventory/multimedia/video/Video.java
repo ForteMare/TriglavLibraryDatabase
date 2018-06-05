@@ -26,9 +26,6 @@ public class Video extends Multimedia {
         this.screenwriter = screenwriter;
         setInternalID(4);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addVideo(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public String getDirector() {
@@ -45,6 +42,12 @@ public class Video extends Multimedia {
 
     public void setScreenwriter(String screenwriter) {
         this.screenwriter = screenwriter;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addVideo(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

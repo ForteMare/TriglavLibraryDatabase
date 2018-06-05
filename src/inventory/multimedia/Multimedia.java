@@ -44,6 +44,11 @@ public class Multimedia extends Inventory {
     }
 
     @Override
+    public void addToDatabase() {
+        // See whether it needs to be activated at any point.
+    }
+
+    @Override
     public String toString() {
         return "Multimedia{" +
                 "publisher='" + publisher + '\'' +

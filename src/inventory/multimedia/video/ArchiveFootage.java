@@ -25,9 +25,6 @@ public class ArchiveFootage extends Video {
         this.propaganda = propaganda;
         setInternalID(16);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addArchiveFootage(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isRegionalHistory() {
@@ -44,6 +41,12 @@ public class ArchiveFootage extends Video {
 
     public void setPropaganda(boolean propaganda) {
         this.propaganda = propaganda;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addArchiveFootage(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

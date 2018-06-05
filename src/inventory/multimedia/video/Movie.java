@@ -25,9 +25,6 @@ public class Movie extends Video {
         this.hollywoodProduction = hollywoodProduction;
         setInternalID(8);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addMovie(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public double getRatingIMDB() {
@@ -44,6 +41,12 @@ public class Movie extends Video {
 
     public void setHollywoodProduction(boolean hollywoodProduction) {
         this.hollywoodProduction = hollywoodProduction;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addMovie(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

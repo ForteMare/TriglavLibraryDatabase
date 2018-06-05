@@ -59,4 +59,5 @@ public abstract class Inventory {
 
     public abstract StringBuilder returnFinalInfo();
     public abstract StringBuilder returnRawInfo();
+    public abstract void addToDatabase();
 }

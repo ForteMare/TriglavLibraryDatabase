@@ -22,9 +22,6 @@ public class Documentary extends Video {
         this.color = color;
         setInternalID(12);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addDocumentary(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isColor() {
@@ -33,6 +30,12 @@ public class Documentary extends Video {
 
     public void setColor(boolean color) {
         this.color = color;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addDocumentary(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

@@ -27,9 +27,6 @@ public class Audiobook extends Audio {
 
         setInternalID(14);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addAudiobook(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public double getLength() {
@@ -46,6 +43,12 @@ public class Audiobook extends Audio {
 
     public void setNarrator(String narrator) {
         this.narrator = narrator;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addAudiobook(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

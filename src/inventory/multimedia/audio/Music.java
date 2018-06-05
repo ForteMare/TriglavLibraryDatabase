@@ -25,9 +25,6 @@ public class Music extends Audio {
         this.album = album;
         setInternalID(10);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addMusic(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public String getArtist() {
@@ -44,6 +41,12 @@ public class Music extends Audio {
 
     public void setAlbum(String album) {
         this.album = album;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addMusic(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

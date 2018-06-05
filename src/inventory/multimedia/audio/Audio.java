@@ -23,9 +23,6 @@ public class Audio extends Multimedia {
         this.format = format;
         setInternalID(6);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addAudio(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public String getFormat() {
@@ -34,6 +31,12 @@ public class Audio extends Multimedia {
 
     public void setFormat(String format) {
         this.format = format;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addAudio(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override
