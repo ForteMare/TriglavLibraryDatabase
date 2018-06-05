@@ -18,8 +18,8 @@ public class Periodical extends Print {
         setType(getClass().getSimpleName());
     }
 
-    public Periodical(String title, String author, String genre, String publicationFrequency) {
-        super(title, author, genre);
+    public Periodical(String title, String author, String subType, String publicationFrequency) {
+        super(title, author, subType);
         this.publicationFrequency = publicationFrequency;
         setInternalID(5);
         setType(getClass().getSimpleName());

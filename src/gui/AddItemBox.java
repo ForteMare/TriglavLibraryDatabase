@@ -8,6 +8,7 @@ import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
+import inventory.print.periodical.Periodical;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -1657,6 +1658,11 @@ public class AddItemBox {
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
 
+                String userPublication = publicationInput.getValue();
+
+                Periodical pe1 = new Periodical(userTitle, userAuthor, userSubtype, userPublication);
+                pe1.setAvailability(userAvailability);
+                pe1.addToDatabase();
 
                 primaryStage.close();
 
