@@ -8,6 +8,7 @@ import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
+import inventory.print.periodical.Newspaper;
 import inventory.print.periodical.Periodical;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -463,7 +464,6 @@ public class AddItemBox {
 
     static void addNewspaper() {
 
-
         // Set the stage
         primaryStage = new Stage();
         primaryStage.setTitle("Newspaper");
@@ -478,10 +478,6 @@ public class AddItemBox {
         reject = new Button("Cancel");
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
-
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
 
         // Instructions
         Label instructionsLabel = new Label("Add a newspaper: ");
@@ -531,6 +527,38 @@ public class AddItemBox {
         informationTypeInput.setValue("Tabloid");
         informationTypeInput.setMinWidth(190);
         Label informationTypeLabel = new Label("Quality of information: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Children Lit information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+                String userPublication = publicationInput.getValue();
+
+                boolean userInfoQuality;
+
+                if(informationTypeInput.getValue() == "Investigative Journalism") {
+                    userInfoQuality = true;
+                } else {
+                    userInfoQuality = false;
+                }
+
+                Newspaper np1 = new Newspaper(userTitle, userAuthor, userSubtype, userPublication, userInfoQuality);
+                np1.setAvailability(userAvailability);
+                np1.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();

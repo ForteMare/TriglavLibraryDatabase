@@ -4,25 +4,22 @@ import inventory.LibraryDatabase;
 
 public class Newspaper extends Periodical {
     private boolean tabloid;
-    private boolean investigativeJournalism;
 
     public Newspaper() {
-        this(false, false);
+        this(false);
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
 
-    public Newspaper(boolean tabloid, boolean investigativeJournalism) {
+    public Newspaper(boolean tabloid) {
         this.tabloid = tabloid;
-        this.investigativeJournalism = investigativeJournalism;
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
 
-    public Newspaper(String title, String author, String genre, String publicationFrequency, boolean tabloid, boolean investigativeJournalism) {
+    public Newspaper(String title, String author, String genre, String publicationFrequency, boolean tabloid) {
         super(title, author, genre, publicationFrequency);
         this.tabloid = tabloid;
-        this.investigativeJournalism = investigativeJournalism;
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
@@ -35,13 +32,6 @@ public class Newspaper extends Periodical {
         this.tabloid = tabloid;
     }
 
-    public boolean isInvestigativeJournalism() {
-        return investigativeJournalism;
-    }
-
-    public void setInvestigativeJournalism(boolean investigativeJournalism) {
-        this.investigativeJournalism = investigativeJournalism;
-    }
 
     @Override
     public void addToDatabase() {
@@ -53,7 +43,6 @@ public class Newspaper extends Periodical {
     public String toString() {
         return "Newspaper{" +
                 "tabloid=" + tabloid +
-                ", investigativeJournalism=" + investigativeJournalism +
                 '}';
     }
 
@@ -64,9 +53,6 @@ public class Newspaper extends Periodical {
         sb.append(super.returnFinalInfo())
                 .append("Tabloid: ")
                 .append(isTabloid())
-                .append("\r\n")
-                .append("Investigative journalism: ")
-                .append(isInvestigativeJournalism())
                 .append("\r\n");
 
         return sb;
@@ -78,8 +64,6 @@ public class Newspaper extends Periodical {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnRawInfo())
                 .append(isTabloid())
-                .append("\r\n")
-                .append(isInvestigativeJournalism())
                 .append("\r\n");
 
         return sb;
