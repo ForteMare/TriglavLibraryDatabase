@@ -105,7 +105,7 @@ public class AddItemBox {
 
         accept.setOnAction(event -> {
 
-            // Book information
+            // Novel information
             try {
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
@@ -412,7 +412,6 @@ public class AddItemBox {
 
                 ChildrensLiterature cl1 = new ChildrensLiterature(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userIllustration, userInteractive);
                 cl1.setAvailability(userAvailability);
-
                 cl1.addToDatabase();
 
                 primaryStage.close();
