@@ -5,6 +5,7 @@ This class is fully committed to creating windows for adding content to the libr
 package gui;
 
 import inventory.print.book.Book;
+import inventory.print.book.ChildrensLiterature;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -397,8 +398,11 @@ public class AddItemBox {
                 int userYear = Integer.parseInt(yearInput.getText());
                 String userDDC = ddcInput.getText();
 
-                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
-                b1.setAvailability(userAvailability);
+                boolean userIllustration = illustrationInput.isSelected();
+                boolean userInteractive = interactiveInput.isSelected();
+
+                ChildrensLiterature cl1 = new ChildrensLiterature(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userIllustration, userInteractive);
+                cl1.setAvailability(userAvailability);
 
                 primaryStage.close();
 
