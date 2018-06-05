@@ -267,6 +267,38 @@ class AlertBox {
         return answer;
     }
 
+    static void programErrorSoft(String exceptionType) {
+
+        // Setting up the primary stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("SYSTEM ERROR");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Setting up the accept button
+        accept = new Button("OK");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Setting up the message label
+        Label programEndLabel = new Label("Software has encountered an error. Program has been terminated.");
+        messageLabel = new Label("Error type: " + exceptionType);
+
+        // Layout design
+        vBox = new VBox(10);
+        vBox.getChildren().addAll(programEndLabel, messageLabel, accept);
+        vBox.setAlignment(Pos.CENTER);
+
+        // Button action
+        accept.setOnAction(event -> primaryStage.close());
+
+        // Setting up the scene
+        scene = new Scene(vBox, 420, 120);
+
+        // Finalize stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+    }
+
     static void programError(String exceptionType) {
 
         // Setting up the primary stage

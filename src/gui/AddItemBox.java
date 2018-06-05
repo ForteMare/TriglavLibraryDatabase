@@ -1475,14 +1475,13 @@ public class AddItemBox {
                 int userYear = Integer.parseInt(yearInput.getText());
                 String userDDC = ddcInput.getText();
 
-
                 Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
                 b1.setAvailability(userAvailability);
 
                 primaryStage.close();
 
             } catch (Exception e) {
-                AlertBox.programError(e.toString());
+                AlertBox.programErrorSoft(e.toString());
             }
         });
         reject.setOnAction(event -> primaryStage.close());
