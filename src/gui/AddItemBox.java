@@ -44,11 +44,7 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
-        // Instructions
+       // Instructions
         Label instructionsLabel = new Label("Add a new novel: ");
 
         // Adding fields for abstract Inventory class
@@ -103,6 +99,30 @@ public class AddItemBox {
         languageInput.setValue("Slovenian");
         languageInput.setMinWidth(190);
         Label languageLabel = new Label("Language: ");
+
+        accept.setOnAction(event -> {
+
+            // Book information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+                boolean userHardCover = hardCoverInput.isSelected();
+                int userYear = Integer.parseInt(yearInput.getText());
+                String userDDC = ddcInput.getText();
+
+                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
+                b1.setAvailability(userAvailability);
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -163,10 +183,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new tourist guide: ");
 
@@ -225,7 +241,32 @@ public class AddItemBox {
 
         // Checkbox for hard-cover
         CheckBox mapInput = new CheckBox("Contains maps");
-//        Label mapLabel = new Label("Contains maps: ");
+
+        // Adding button actions
+
+        accept.setOnAction(event -> {
+
+            // Book information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+                boolean userHardCover = hardCoverInput.isSelected();
+                int userYear = Integer.parseInt(yearInput.getText());
+                String userDDC = ddcInput.getText();
+
+                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
+                b1.setAvailability(userAvailability);
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -287,10 +328,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new book for children: ");
 
@@ -347,6 +384,30 @@ public class AddItemBox {
         // Checkbox for hard-cover
         CheckBox interactiveInput = new CheckBox("Interactive book");
         Label interactiveLabel = new Label("Interactive book: ");
+
+        accept.setOnAction(event -> {
+
+            // Book information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+                boolean userHardCover = hardCoverInput.isSelected();
+                int userYear = Integer.parseInt(yearInput.getText());
+                String userDDC = ddcInput.getText();
+
+                Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
+                b1.setAvailability(userAvailability);
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
