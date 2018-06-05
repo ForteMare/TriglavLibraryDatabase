@@ -30,8 +30,6 @@ public class Book extends Print {
         setInternalID(3);
         setType(getClass().getSimpleName());
 
-        LibraryDatabase.addBook(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isHardCover() {
@@ -56,6 +54,13 @@ public class Book extends Print {
 
     public void setDdcLocation(String ddcLocation) {
         this.ddcLocation = ddcLocation;
+    }
+
+    @Override
+    public void addToDatabase() {
+
+        LibraryDatabase.addBook(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

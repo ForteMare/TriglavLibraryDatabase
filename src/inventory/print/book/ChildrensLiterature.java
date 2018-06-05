@@ -25,9 +25,6 @@ public class ChildrensLiterature extends Book {
         this.interactive = interactive;
         setInternalID(15);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addChildrensBook(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isIllustration() {
@@ -44,6 +41,12 @@ public class ChildrensLiterature extends Book {
 
     public void setInteractive(boolean interactive) {
         this.interactive = interactive;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addChildrensBook(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

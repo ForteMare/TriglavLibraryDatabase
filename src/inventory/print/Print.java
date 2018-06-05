@@ -44,6 +44,10 @@ public class Print extends Inventory {
         this.subType = subType;
     }
 
+    public void addToDatabase() {
+        // To be determined whether I wish to activate it in this class.
+    }
+
     @Override
     public String toString() {
         return "Print{" +

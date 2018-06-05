@@ -25,9 +25,6 @@ public class Magazine extends Periodical {
         this.containsNudity = containsNudity;
         setInternalID(13);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addMagazine(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isQualityPrint() {
@@ -44,6 +41,12 @@ public class Magazine extends Periodical {
 
     public void setContainsNudity(boolean containsNudity) {
         this.containsNudity = containsNudity;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addMagazine(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

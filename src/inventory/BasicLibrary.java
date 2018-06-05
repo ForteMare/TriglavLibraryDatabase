@@ -12,7 +12,7 @@ import inventory.print.book.Novel;
 
 import java.util.ArrayList;
 
-public class DefaultLibrary {
+public class BasicLibrary {
 
     private static ArrayList<Inventory> libraryInventory = new ArrayList<>();
 

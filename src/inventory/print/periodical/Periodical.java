@@ -23,9 +23,6 @@ public class Periodical extends Print {
         this.publicationFrequency = publicationFrequency;
         setInternalID(5);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addPeriodical(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public int getPublicationFrequency() {
@@ -34,6 +31,12 @@ public class Periodical extends Print {
 
     public void setPublicationFrequency(int publicationFrequency) {
         this.publicationFrequency = publicationFrequency;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addPeriodical(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

@@ -24,8 +24,6 @@ public class Novel extends Book {
         setInternalID(11);
         setType(getClass().getSimpleName());
 
-        LibraryDatabase.addNovel(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public String getLanguage() {
@@ -34,6 +32,12 @@ public class Novel extends Book {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addNovel(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

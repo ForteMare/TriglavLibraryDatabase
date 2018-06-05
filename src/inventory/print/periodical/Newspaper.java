@@ -25,9 +25,6 @@ public class Newspaper extends Periodical {
         this.investigativeJournalism = investigativeJournalism;
         setInternalID(9);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addNewspaper(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isTabloid() {
@@ -44,6 +41,12 @@ public class Newspaper extends Periodical {
 
     public void setInvestigativeJournalism(boolean investigativeJournalism) {
         this.investigativeJournalism = investigativeJournalism;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addNewspaper(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

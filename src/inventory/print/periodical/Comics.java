@@ -25,9 +25,6 @@ public class Comics extends Periodical {
         this.graphicNovel = graphicNovel;
         setInternalID(17);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addComics(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public boolean isManga() {
@@ -44,6 +41,12 @@ public class Comics extends Periodical {
 
     public void setGraphicNovel(boolean graphicNovel) {
         this.graphicNovel = graphicNovel;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addComics(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override

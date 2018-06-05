@@ -25,9 +25,6 @@ public class TouristGuide extends Book {
         this.includesMap = includesMap;
         setInternalID(7);
         setType(getClass().getSimpleName());
-
-        LibraryDatabase.addTouristGuide(this);
-        LibraryDatabase.addInventory(this);
     }
 
     public String getRegion() {
@@ -44,6 +41,12 @@ public class TouristGuide extends Book {
 
     public void setIncludesMap(boolean includesMap) {
         this.includesMap = includesMap;
+    }
+
+    @Override
+    public void addToDatabase() {
+        LibraryDatabase.addTouristGuide(this);
+        LibraryDatabase.addInventory(this);
     }
 
     @Override
