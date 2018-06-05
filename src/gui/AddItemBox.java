@@ -373,7 +373,6 @@ public class AddItemBox {
 
         // Checkbox for hard-cover
         CheckBox hardCoverInput = new CheckBox("Hard-cover");
-        Label hardcoverLabel = new Label("Hard-cover: ");
 
         // Text field for year published
         TextField yearInput = new TextField();
@@ -389,15 +388,13 @@ public class AddItemBox {
 
         // Checkbox for hard-cover
         CheckBox illustrationInput = new CheckBox("For illustration");
-        Label illustrationLabel = new Label("For illustration: ");
 
         // Checkbox for hard-cover
         CheckBox interactiveInput = new CheckBox("Interactive book");
-        Label interactiveLabel = new Label("Interactive book: ");
 
         accept.setOnAction(event -> {
 
-            // Book information
+            // Children Lit information
             try {
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
@@ -447,11 +444,8 @@ public class AddItemBox {
         layout.add(subTypeInput, 1, 2);
         layout.add(availableLabel, 1, 3);
         layout.add(availableInput, 1, 4);
-//        layout.add(hardcoverLabel, 1, 5);
         layout.add(hardCoverInput, 1, 6);
-//        layout.add(illustrationLabel, 1, 7);
         layout.add(illustrationInput, 1, 7);
-//        layout.add(interactiveLabel, 1, 9);
         layout.add(interactiveInput, 1, 8);
 
         // Buttons
