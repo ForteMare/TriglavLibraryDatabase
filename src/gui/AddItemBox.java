@@ -1607,10 +1607,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new periodical: ");
 
@@ -1650,6 +1646,26 @@ public class AddItemBox {
         publicationInput.setValue("Annual");
         publicationInput.setMinWidth(190);
         Label publicationLabel = new Label("Publication frequency:");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Children Lit information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();

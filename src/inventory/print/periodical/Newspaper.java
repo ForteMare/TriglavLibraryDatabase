@@ -19,7 +19,7 @@ public class Newspaper extends Periodical {
         setType(getClass().getSimpleName());
     }
 
-    public Newspaper(String title, String author, String genre, int publicationFrequency, boolean tabloid, boolean investigativeJournalism) {
+    public Newspaper(String title, String author, String genre, String publicationFrequency, boolean tabloid, boolean investigativeJournalism) {
         super(title, author, genre, publicationFrequency);
         this.tabloid = tabloid;
         this.investigativeJournalism = investigativeJournalism;

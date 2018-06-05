@@ -19,7 +19,7 @@ public class Comics extends Periodical {
         setType(getClass().getSimpleName());
     }
 
-    public Comics(String title, String author, String genre, int publicationFrequency, boolean manga, boolean graphicNovel) {
+    public Comics(String title, String author, String genre, String publicationFrequency, boolean manga, boolean graphicNovel) {
         super(title, author, genre, publicationFrequency);
         this.manga = manga;
         this.graphicNovel = graphicNovel;

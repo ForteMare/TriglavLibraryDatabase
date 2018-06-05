@@ -4,32 +4,32 @@ import inventory.LibraryDatabase;
 import inventory.print.Print;
 
 public class Periodical extends Print {
-    private int publicationFrequency;
+    private String publicationFrequency;
 
     public Periodical() {
-        this(0);
+        this("None");
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
 
-    public Periodical(int publicationFrequency) {
+    public Periodical(String publicationFrequency) {
         this.publicationFrequency = publicationFrequency;
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
 
-    public Periodical(String title, String author, String genre, int publicationFrequency) {
+    public Periodical(String title, String author, String genre, String publicationFrequency) {
         super(title, author, genre);
         this.publicationFrequency = publicationFrequency;
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
 
-    public int getPublicationFrequency() {
+    public String getPublicationFrequency() {
         return publicationFrequency;
     }
 
-    public void setPublicationFrequency(int publicationFrequency) {
+    public void setPublicationFrequency(String publicationFrequency) {
         this.publicationFrequency = publicationFrequency;
     }
 

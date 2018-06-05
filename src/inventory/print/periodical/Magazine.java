@@ -19,7 +19,7 @@ public class Magazine extends Periodical {
         setType(getClass().getSimpleName());
     }
 
-    public Magazine(String title, String author, String genre, int publicationFrequency, boolean qualityPrint, boolean containsNudity) {
+    public Magazine(String title, String author, String genre, String publicationFrequency, boolean qualityPrint, boolean containsNudity) {
         super(title, author, genre, publicationFrequency);
         this.qualityPrint = qualityPrint;
         this.containsNudity = containsNudity;
