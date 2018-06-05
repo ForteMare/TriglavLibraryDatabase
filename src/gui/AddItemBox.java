@@ -531,12 +531,13 @@ public class AddItemBox {
         // Adding button actions
         accept.setOnAction(event -> {
 
-            // Children Lit information
+            // Newspaper information
             try {
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
+
                 String userPublication = publicationInput.getValue();
 
                 boolean userInfoQuality;
@@ -616,10 +617,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new magazine: ");
 
@@ -665,6 +662,33 @@ public class AddItemBox {
         // Check box for quality print
         CheckBox qualityPrintInput = new CheckBox();
         Label qualityPrintLabel = new Label("Quality print: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Magazine information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+
+                String userPublication = publicationInput.getValue();
+
+//                boolean user
+
+                Periodical pe1 = new Periodical(userTitle, userAuthor, userSubtype, userPublication);
+                pe1.setAvailability(userAvailability);
+                pe1.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
