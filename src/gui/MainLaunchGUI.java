@@ -10,7 +10,6 @@ Triglav Library Database has two main classes.
 
 package gui;
 
-import inventory.FalseDatabaseStarter;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 import javafx.application.Application;
@@ -35,7 +34,7 @@ public class MainLaunchGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this
-        FalseDatabaseStarter.startDatabase();
+//        DefaultLibrary.startDatabase();
 
         launch(args);
 
@@ -45,7 +44,7 @@ public class MainLaunchGUI extends Application {
     public void start(Stage primaryStage) {
         try {
             // Add relevant buttons
-            Button overview = new Button("Library");
+            Button library = new Button("Library");
             Button addItem = new Button("Add Item");
             Button importLibrary = new Button("Import");
             Button exportLibrary = new Button("Export");
@@ -54,8 +53,8 @@ public class MainLaunchGUI extends Application {
 
 
             // Set button size
-            overview.setMinSize(90, 30);
-            overview.setMaxSize(30, 10);
+            library.setMinSize(90, 30);
+            library.setMaxSize(30, 10);
 
             addItem.setMinSize(90, 30);
             addItem.setMaxSize(30, 10);
@@ -76,9 +75,12 @@ public class MainLaunchGUI extends Application {
             // VBox for holding button controls
             VBox controls = new VBox(15);
             controls.setPadding(new Insets(10));
-            controls.getChildren().addAll(overview, addItem, importLibrary, exportLibrary, about, exit);
+            controls.getChildren().addAll(library, addItem, importLibrary, exportLibrary, about, exit);
 
             // Control button commands
+            library.setOnAction(e -> {
+                TempLibrary.viewItems();
+            });
             addItem.setOnAction(e -> AlertBox.addToLibrary());
             importLibrary.setOnAction(e -> AlertBox.generalNotification("Library Imported", "Library has been imported into the program"));
             exportLibrary.setOnAction(e -> {

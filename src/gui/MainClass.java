@@ -9,7 +9,7 @@ THIS CLASS WILL BE DELETED AFTER TESTING IS DONE.
  */
 package gui;
 
-import inventory.FalseDatabaseStarter;
+import inventory.DefaultLibrary;
 import inventory.multimedia.video.Movie;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -27,7 +27,7 @@ public class MainClass extends Application {
     TableView<Movie> table;
 
     public static void main(String[] args) {
-        FalseDatabaseStarter.startDatabase();
+        DefaultLibrary.startDatabase();
         launch(args);
     }
 

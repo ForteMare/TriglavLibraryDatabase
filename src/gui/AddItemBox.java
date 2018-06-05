@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.print.book.Book;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -1407,10 +1408,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new book: ");
 
@@ -1463,6 +1460,26 @@ public class AddItemBox {
         layout.setPadding(new Insets(20, 45, 45, 45));
         layout.setHgap(70);
         layout.setVgap(15);
+
+        // Adding button actions
+
+        accept.setOnAction(event -> {
+
+            // Book information
+            String userAvailability = availableInput.getValue();
+            String userTitle = titleInput.getText();
+            String userAuthor = authorInput.getText();
+            String userSubtype = subTypeInput.getValue();
+            boolean userHardCover = hardCoverInput.isSelected();
+            int userYear = Integer.parseInt(yearInput.getText());
+            String userDDC = ddcInput.getText();
+
+            Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
+            b1.setAvailability(userAvailability);
+
+            primaryStage.close();
+        });
+        reject.setOnAction(event -> primaryStage.close());
 
         // Adding Items to the Grid Pane
 
