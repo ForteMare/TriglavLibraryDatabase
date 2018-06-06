@@ -10,7 +10,6 @@ Triglav Library Database has two main classes.
 
 package gui;
 
-import gui.inventoryDisplay.InventoryView;
 import inventory.DefaultLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
@@ -83,7 +82,7 @@ public class MainMethodGUI extends Application {
             // Control button commands
 
             // Pressing library button shows items in the library in TableView
-            library.setOnAction(e -> InventoryView.viewInventory());
+            library.setOnAction(e -> AlertBox.showContent());
 
             // Adds a new item to the inventory
             addItem.setOnAction(e -> AlertBox.addToLibrary());

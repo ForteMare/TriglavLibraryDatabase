@@ -94,7 +94,7 @@ public class BookView {
     public static ObservableList<Book> getInventory() {
         ObservableList<Book> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
+        for (int i = 0; i < LibraryDatabase.getBookList().size(); i++) {
             inventory.add(LibraryDatabase.getBookList().get(i));
         }
 
