@@ -4,7 +4,7 @@ MASTER
 Triglav Library Database has two main classes.
 
 >> For interacting with the program through JavaFX GUI, this is the main class.
->> For interacting with the program through IDE IO, Controls is the main class
+>> For interacting with the program through IDE IO, Main is the main class
  */
 
 
@@ -32,7 +32,7 @@ This is the main window and where most operations are performed.
 Introductory windows or similar are not in consideration yet.
  */
 
-public class MainMethodGUI extends Application {
+public class MainGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this
