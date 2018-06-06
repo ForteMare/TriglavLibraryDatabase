@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
 import inventory.print.book.Book;
@@ -1029,10 +1030,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new documentary: ");
 
@@ -1084,6 +1081,40 @@ public class AddItemBox {
         colorInput.setValue("Multicolor");
         colorInput.setMinWidth(190);
         Label colorLabel = new Label("Documentary color: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Video information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userDirector = directorInput.getText();
+                String userScreenwriter = screenWriterInput.getText();
+
+                boolean userColor;
+
+                if (colorInput.getValue() == "Multicolor") {
+                    userColor = true;
+                } else {
+                    userColor = false;
+                }
+
+                Documentary doc1 = new Documentary(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userColor);
+                doc1.setAvailability(userAvailability);
+                doc1.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
