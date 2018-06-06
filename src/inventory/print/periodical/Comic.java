@@ -2,24 +2,24 @@ package inventory.print.periodical;
 
 import inventory.LibraryDatabase;
 
-public class Comics extends Periodical {
+public class Comic extends Periodical {
     private boolean manga;
     private boolean graphicNovel;
 
-    public Comics() {
+    public Comic() {
         this(false, false);
         setInternalID(17);
         setType(getClass().getSimpleName());
     }
 
-    public Comics(boolean manga, boolean graphicNovel) {
+    public Comic(boolean manga, boolean graphicNovel) {
         this.manga = manga;
         this.graphicNovel = graphicNovel;
         setInternalID(17);
         setType(getClass().getSimpleName());
     }
 
-    public Comics(String title, String author, String genre, String publicationFrequency, boolean manga, boolean graphicNovel) {
+    public Comic(String title, String author, String genre, String publicationFrequency, boolean manga, boolean graphicNovel) {
         super(title, author, genre, publicationFrequency);
         this.manga = manga;
         this.graphicNovel = graphicNovel;
@@ -51,7 +51,7 @@ public class Comics extends Periodical {
 
     @Override
     public String toString() {
-        return "Comics{" +
+        return "Comic{" +
                 "manga=" + manga +
                 ", graphicNovel=" + graphicNovel +
                 '}';

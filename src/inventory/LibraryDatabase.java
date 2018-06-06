@@ -18,7 +18,7 @@ import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
-import inventory.print.periodical.Comics;
+import inventory.print.periodical.Comic;
 import inventory.print.periodical.Magazine;
 import inventory.print.periodical.Newspaper;
 import inventory.print.periodical.Periodical;
@@ -47,7 +47,7 @@ public class LibraryDatabase {
     private static ArrayList<Audiobook> audiobookList = new ArrayList<>();
     private static ArrayList<ChildrensLiterature> childrenLitList = new ArrayList<>();
     private static ArrayList<ArchiveFootage> archiveFootageList = new ArrayList<>();
-    private static ArrayList<Comics> comicsList = new ArrayList<>();
+    private static ArrayList<Comic> comicList = new ArrayList<>();
     private static ArrayList<Podcast> podcastList = new ArrayList<>();
 
     public LibraryDatabase() {
@@ -174,12 +174,12 @@ public class LibraryDatabase {
         LibraryDatabase.archiveFootageList = archiveFootageList;
     }
 
-    public static ArrayList<Comics> getComicsList() {
-        return comicsList;
+    public static ArrayList<Comic> getComicList() {
+        return comicList;
     }
 
-    public static void setComicsList(ArrayList<Comics> comicsList) {
-        LibraryDatabase.comicsList = comicsList;
+    public static void setComicList(ArrayList<Comic> comicList) {
+        LibraryDatabase.comicList = comicList;
     }
 
     public static ArrayList<Podcast> getPodcastList() {
@@ -250,8 +250,8 @@ public class LibraryDatabase {
         archiveFootageList.add(archiveFootage);
     }
 
-    public static void addComics(Comics comics) {
-        comicsList.add(comics);
+    public static void addComics(Comic comic) {
+        comicList.add(comic);
     }
 
     public static void addPodcast(Podcast podcast) {

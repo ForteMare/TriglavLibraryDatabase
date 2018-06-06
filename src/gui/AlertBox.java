@@ -112,7 +112,7 @@ class AlertBox {
         // Making a choice box
         ChoiceBox<String> selectionChoice = new ChoiceBox<>();
         selectionChoice.getItems().addAll("Book", "Novel", "Tourist Guide", "Children's Lit", "Periodical",
-                "Newspaper", "Magazine", "Comics", "Video", "Movie", "Documentary",
+                "Newspaper", "Magazine", "Comic", "Video", "Movie", "Documentary",
                 "Archive Footage", "Audio", "Music", "Audiobook", "Podcast");
 
         // Set default value of choice box

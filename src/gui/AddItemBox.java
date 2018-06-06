@@ -8,6 +8,7 @@ import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
+import inventory.print.periodical.Comic;
 import inventory.print.periodical.Magazine;
 import inventory.print.periodical.Newspaper;
 import inventory.print.periodical.Periodical;
@@ -735,7 +736,7 @@ public class AddItemBox {
 
         // Set the stage
         primaryStage = new Stage();
-        primaryStage.setTitle("Comics");
+        primaryStage.setTitle("Comic");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate Accept button
@@ -747,10 +748,6 @@ public class AddItemBox {
         reject = new Button("Cancel");
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
-
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
 
         // Instructions
         Label instructionsLabel = new Label("Add a comic: ");
@@ -792,14 +789,45 @@ public class AddItemBox {
         publicationInput.setMinWidth(190);
         Label publicationLabel = new Label("Publication frequency:");
 
-        // Items specific to Comics class
+        // Items specific to Comic class
+//
+//        // Checking whether it is manga or a graphic novel
+//        ChoiceBox<String> graphicNovelInput = new ChoiceBox<>();
+//        graphicNovelInput.getItems().addAll("Manga", "Graphic Novel");
+//        graphicNovelInput.setValue("Graphic Novel");
+//        graphicNovelInput.setMinWidth(190);
+//        Label graphicNovelLabel = new Label("Graphic novel or manga: ");
+//
+        //
 
-        // Checking whether it is manga or a graphic novel
-        ChoiceBox<String> graphicNovelInput = new ChoiceBox<>();
-        graphicNovelInput.getItems().addAll("Manga", "Graphic Novel");
-        graphicNovelInput.setValue("Graphic Novel");
-        graphicNovelInput.setMinWidth(190);
-        Label graphicNovelLabel = new Label("Graphic novel or manga: ");
+        CheckBox graphicNovelInput = new CheckBox("Graphic novel");
+        CheckBox mangaInput = new CheckBox("Manga");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Comic information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userAuthor = authorInput.getText();
+                String userSubtype = subTypeInput.getValue();
+
+                String userPublication = publicationInput.getValue();
+
+                boolean userMangaSelect = mangaInput.isSelected();
+                boolean userGraphicNovelSelect = graphicNovelInput.isSelected();
+
+                Comic co1 = new Comic(userTitle, userAuthor, userSubtype, userPublication, userMangaSelect, userGraphicNovelSelect);
+                co1.setAvailability(userAvailability);
+                co1.addToDatabase();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -819,10 +847,10 @@ public class AddItemBox {
         layout.add(subTypeInput, 0, 6);
 
         // Second column
-        layout.add(graphicNovelLabel, 1, 1);
-        layout.add(graphicNovelInput, 1, 2);
-        layout.add(availableLabel, 1, 3);
-        layout.add(availableInput, 1, 4);
+        layout.add(availableLabel, 1, 1);
+        layout.add(availableInput, 1, 2);
+        layout.add(graphicNovelInput, 1, 3);
+        layout.add(mangaInput, 1, 4);
 
         // Buttons
         layout.add(accept, 0, 11);
