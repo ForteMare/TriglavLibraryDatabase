@@ -8,6 +8,7 @@ import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
+import inventory.print.periodical.Magazine;
 import inventory.print.periodical.Newspaper;
 import inventory.print.periodical.Periodical;
 import javafx.geometry.Insets;
@@ -660,8 +661,10 @@ public class AddItemBox {
         // Items specific to Magazine class
 
         // Check box for quality print
-        CheckBox qualityPrintInput = new CheckBox();
-        Label qualityPrintLabel = new Label("Quality print: ");
+        CheckBox qualityPrintInput = new CheckBox("Quality print: ");
+
+        // Check box for quality print
+        CheckBox containsNudityInput = new CheckBox("Contains nudity: ");
 
         // Adding button actions
         accept.setOnAction(event -> {
@@ -675,11 +678,12 @@ public class AddItemBox {
 
                 String userPublication = publicationInput.getValue();
 
-//                boolean user
+                boolean userQualityPrint = qualityPrintInput.isSelected();
+                boolean userContainsNudity = containsNudityInput.isSelected();
 
-                Periodical pe1 = new Periodical(userTitle, userAuthor, userSubtype, userPublication);
-                pe1.setAvailability(userAvailability);
-                pe1.addToDatabase();
+                Magazine ma1 = new Magazine(userTitle, userAuthor, userSubtype, userPublication, userQualityPrint, userContainsNudity);
+                ma1.setAvailability(userAvailability);
+                ma1.addToDatabase();
 
                 primaryStage.close();
 
@@ -712,8 +716,8 @@ public class AddItemBox {
         layout.add(publicationInput, 1, 2);
         layout.add(availableLabel, 1, 3);
         layout.add(availableInput, 1, 4);
-        layout.add(qualityPrintLabel, 1, 5);
-        layout.add(qualityPrintInput, 1, 6);
+        layout.add(qualityPrintInput, 1, 5);
+        layout.add(containsNudityInput, 1, 6);
 
         // Buttons
         layout.add(accept, 0, 11);
