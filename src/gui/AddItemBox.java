@@ -1,5 +1,5 @@
 /*
-This class is fully committed to creating windows for adding content to the library.
+
  */
 
 package gui;

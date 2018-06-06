@@ -1,4 +1,4 @@
-package gui;
+package gui.retrieveInventory;
 
 import inventory.Inventory;
 import inventory.LibraryDatabase;
@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class TempLibrary {
+public class InventoryView {
 
     public static void viewItems() {
 

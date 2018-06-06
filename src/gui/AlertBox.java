@@ -1,7 +1,7 @@
 /*
 SLAVE
 
-MainLaunchGUI calls all additional windows from here.
+MainMethodGUI calls all additional windows from here.
 
 It would be ideal for this class not to call any further FX classes, that all calling commands are done from the main class.
 This is not a priority for now, however.

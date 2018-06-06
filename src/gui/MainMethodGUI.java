@@ -10,6 +10,7 @@ Triglav Library Database has two main classes.
 
 package gui;
 
+import gui.retrieveInventory.InventoryView;
 import inventory.DefaultLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
@@ -32,7 +33,7 @@ This is the main window and where most operations are performed.
 Introductory windows or similar are not in consideration yet.
  */
 
-public class MainLaunchGUI extends Application {
+public class MainMethodGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this
@@ -52,7 +53,6 @@ public class MainLaunchGUI extends Application {
             Button exportLibrary = new Button("Export");
             Button about = new Button("About");
             Button exit = new Button("Exit");
-
 
             // Set button size
             library.setMinSize(90, 30);
@@ -81,7 +81,7 @@ public class MainLaunchGUI extends Application {
 
             // Control button commands
             library.setOnAction(e -> {
-                TempLibrary.viewItems();
+                InventoryView.viewItems();
             });
             addItem.setOnAction(e -> AlertBox.addToLibrary());
             importLibrary.setOnAction(e -> AlertBox.generalNotification("Library Imported", "Library has been imported into the program"));
@@ -96,6 +96,7 @@ public class MainLaunchGUI extends Application {
                 }
             });
             about.setOnAction(e -> AlertBox.credits());
+
             exit.setOnAction(e -> Platform.exit());
 
             // Adding Table View of Inventory to the main screen

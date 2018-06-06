@@ -2,7 +2,7 @@
 Triglav Library Database has two main classes.
 
 >> For interacting with the program through IDE IO, this is the main class.
->> For interacting with the program through JavaFX GUI, MainLaunchGUI is the main class.
+>> For interacting with the program through JavaFX GUI, MainMethodGUI is the main class.
  */
 
 import inventory.DefaultLibrary;
