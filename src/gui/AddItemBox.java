@@ -7,6 +7,7 @@ package gui;
 import inventory.multimedia.audio.Audio;
 import inventory.multimedia.audio.Audiobook;
 import inventory.multimedia.audio.Music;
+import inventory.multimedia.audio.Podcast;
 import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
@@ -1248,7 +1249,7 @@ public class AddItemBox {
                 String userDirector = directorInput.getText();
                 String userScreenwriter = screenWriterInput.getText();
 
-                boolean userRegionalHistory  = regionalHistoryInput.isSelected();
+                boolean userRegionalHistory = regionalHistoryInput.isSelected();
                 boolean userPropaganda = propagandaInput.isSelected();
 
                 ArchiveFootage archive = new ArchiveFootage(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userRegionalHistory, userPropaganda);
@@ -1594,10 +1595,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new podcast: ");
 
@@ -1640,11 +1637,38 @@ public class AddItemBox {
 
         // Adding items specific for Podcast class
         CheckBox offlineInput = new CheckBox("Available Offline");
-//        Label offlineLabel = new Label("Available offline: ");
 
         // Adding check box for popularity
         CheckBox featuredInput = new CheckBox("Popular / Featured");
-//        Label featuredLabel = new Label("Popular or Featured: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Podcast information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userFormat = fileFormatInput.getValue();
+
+                boolean userOffline = offlineInput.isSelected();
+                boolean userFeatured = featuredInput.isSelected();
+
+                Podcast podcast = new Podcast(userTitle, userPublisher, userSubDef, userFormat, userOffline, userFeatured);
+                podcast.setAvailability(userAvailability);
+                podcast.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
+
 
         // Setting up the Grid Pane
         layout = new GridPane();
