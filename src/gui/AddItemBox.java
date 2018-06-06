@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
@@ -940,6 +941,35 @@ public class AddItemBox {
         // Input whether movie is a Hollywood production
         CheckBox hollywoodInput = new CheckBox();
         Label hollywoodLabel = new Label("Hollywood production: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Movie information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userDirector = directorInput.getText();
+                String userScreenwriter = screenWriterInput.getText();
+
+                double userIMDBRating = Double.parseDouble(ratingInput.getText());
+                boolean userHollywood = hollywoodInput.isSelected();
+
+                Movie mov1 = new Movie(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userIMDBRating, userHollywood);
+                mov1.setAvailability(userAvailability);
+                mov1.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
