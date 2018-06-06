@@ -75,7 +75,7 @@ public class BookView {
 
         TableView<Book> table = new TableView<Book>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, hardCoverColumn, yearPublishedColumn, ddcLocationColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
