@@ -5,6 +5,7 @@ This class is fully committed to creating windows for adding content to the libr
 package gui;
 
 import inventory.multimedia.audio.Audio;
+import inventory.multimedia.audio.Music;
 import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
@@ -1322,10 +1323,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add new music: ");
 
@@ -1377,6 +1374,34 @@ public class AddItemBox {
         TextField albumInput = new TextField();
         albumInput.setPromptText("Sticky Fingers");
         Label albumLabel = new Label("Album: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Music information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userFormat = fileFormatInput.getValue();
+
+                String userArtist = artistInput.getText();
+                String userAlbum = albumInput.getText();
+
+                Music music = new Music(userTitle, userPublisher, userSubDef, userFormat, userArtist, userAlbum);
+                music.setAvailability(userAvailability);
+                music.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
