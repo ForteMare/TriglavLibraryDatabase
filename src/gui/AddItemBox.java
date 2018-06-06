@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.multimedia.video.Video;
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
@@ -51,7 +52,7 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-       // Instructions
+        // Instructions
         Label instructionsLabel = new Label("Add a new novel: ");
 
         // Adding fields for abstract Inventory class
@@ -544,7 +545,7 @@ public class AddItemBox {
 
                 boolean userInfoQuality;
 
-                if(informationTypeInput.getValue() == "Investigative Journalism") {
+                if (informationTypeInput.getValue() == "Investigative Journalism") {
                     userInfoQuality = true;
                 } else {
                     userInfoQuality = false;
@@ -1809,10 +1810,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new video: ");
 
@@ -1855,6 +1852,32 @@ public class AddItemBox {
         TextField screenWriterInput = new TextField();
         screenWriterInput.setPromptText("Sarah Lynn");
         Label screenWriterLabel = new Label("Screenwriter: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Video information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userDirector = directorInput.getText();
+                String userScreenwriter = screenWriterInput.getText();
+
+                Video video1 = new Video(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter);
+                video1.setAvailability(userAvailability);
+                video1.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
