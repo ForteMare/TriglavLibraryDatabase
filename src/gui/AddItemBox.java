@@ -5,6 +5,7 @@ This class is fully committed to creating windows for adding content to the libr
 package gui;
 
 import inventory.multimedia.audio.Audio;
+import inventory.multimedia.audio.Audiobook;
 import inventory.multimedia.audio.Music;
 import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
@@ -1458,10 +1459,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new audiobook: ");
 
@@ -1502,7 +1499,7 @@ public class AddItemBox {
         fileFormatInput.setMinWidth(190);
         Label fileFormatLabel = new Label("File format: ");
 
-        // Text field for author
+        // Text field for length of the audiobook
         TextField lengthInput = new TextField();
         lengthInput.setPromptText("27.15");
         Label lengthLabel = new Label("Length in minutes: ");
@@ -1511,6 +1508,34 @@ public class AddItemBox {
         TextField narratorInput = new TextField();
         narratorInput.setPromptText("Stephen Fry");
         Label narratorLabel = new Label("Narrator: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Audio book  information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userFormat = fileFormatInput.getValue();
+
+                double userLength = Double.parseDouble(lengthInput.getText());
+                String userNarrator = narratorInput.getText();
+
+                Audiobook audiobook = new Audiobook(userTitle, userPublisher, userSubDef, userFormat, userLength, userNarrator);
+                audiobook.setAvailability(userAvailability);
+                audiobook.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
