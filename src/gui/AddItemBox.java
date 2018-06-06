@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.multimedia.audio.Audio;
 import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
@@ -2024,10 +2025,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new audio file: ");
 
@@ -2067,6 +2064,31 @@ public class AddItemBox {
         fileFormatInput.setValue("MP3");
         fileFormatInput.setMinWidth(190);
         Label fileFormatLabel = new Label("File format: ");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Audio information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userFormat = fileFormatInput.getValue();
+
+                Audio audio = new Audio(userTitle, userPublisher, userSubDef, userFormat);
+                audio.setAvailability(userAvailability);
+                audio.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
