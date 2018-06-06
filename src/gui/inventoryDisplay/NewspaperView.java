@@ -1,4 +1,4 @@
-package gui.retrieveInventory;
+package gui.inventoryDisplay;
 
 import inventory.Inventory;
 import inventory.LibraryDatabase;
@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class VideoView {
+public class NewspaperView {
 
     public static void viewInventory() {
 

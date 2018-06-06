@@ -1,4 +1,4 @@
-package gui.retrieveInventory;
+package gui.inventoryDisplay;
 
 import inventory.LibraryDatabase;
 import inventory.print.book.Book;
@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-class BookView {
+public class BookView {
 
     public static void viewInventory() {
 
@@ -44,6 +44,31 @@ class BookView {
         TableColumn<Book, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Author column
+        TableColumn<Book, String> authorColumn = new TableColumn<>("Author");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<Book, String> subTypeColumn = new TableColumn<>("Genre");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Hard cover column
+        TableColumn<Book, String> hardCoverColumn = new TableColumn<>("Hard Cover");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
+
+        //Year published column
+        TableColumn<Book, String> yearPublishedColumn = new TableColumn<>("Year Published");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
+
+        //DDC Location column
+        TableColumn<Book, String> ddcLocationColumn = new TableColumn<>("DDC Number:");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());

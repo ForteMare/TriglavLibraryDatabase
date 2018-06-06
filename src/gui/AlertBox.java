@@ -138,6 +138,55 @@ class AlertBox {
 
     }
 
+    static void showContent() {
+
+        // Set up the primary stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Show Database");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Setting up the accept button
+        accept = new Button("Ok");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Setting up the reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up the message label
+        messageLabel = new Label("Enter item you want to add to the library: ");
+
+        // Making a choice box
+        ChoiceBox<String> selectionChoice = new ChoiceBox<>();
+        selectionChoice.getItems().addAll("Inventory", "Book", "Novel", "Tourist Guide", "Children's Lit", "Periodical",
+                "Newspaper", "Magazine", "Comic", "Video", "Movie", "Documentary",
+                "Archive Footage", "Audio", "Music", "Audiobook", "Podcast");
+
+        // Set default value of choice box
+        selectionChoice.setValue("Novel");
+
+        // Button actions
+        // Confirming gets value from selectionChoice drop box and sends it to supportBox for evaluation. supportBox evaluates, calls AddItemBox class
+        accept.setOnAction(event -> PeripheralBox.ItemRead(selectionChoice.getValue()));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Layout design
+        hBox = new HBox(10, messageLabel);
+        hBox.getChildren().addAll(selectionChoice, accept, reject);
+        hBox.setPadding(new Insets(20));
+        hBox.setAlignment(Pos.BASELINE_LEFT);
+
+        // Setting up the scene
+        scene = new Scene(hBox, 650, 80);
+
+        // Launch stage stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+
+    }
+
     static void generalNotification(String title, String actionPerformed) {
 
         // Setting up the primary stage
