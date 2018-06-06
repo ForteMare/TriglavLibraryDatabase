@@ -81,7 +81,7 @@ public class MainMethodGUI extends Application {
 
             // Control button commands
             library.setOnAction(e -> {
-                InventoryView.viewItems();
+                InventoryView.viewInventory();
             });
             addItem.setOnAction(e -> AlertBox.addToLibrary());
             importLibrary.setOnAction(e -> AlertBox.generalNotification("Library Imported", "Library has been imported into the program"));

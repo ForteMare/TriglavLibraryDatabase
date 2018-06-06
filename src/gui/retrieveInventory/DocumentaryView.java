@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class InventoryView {
+public class DocumentaryView {
 
     public static void viewInventory() {
 
