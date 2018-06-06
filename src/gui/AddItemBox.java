@@ -4,6 +4,7 @@ This class is fully committed to creating windows for adding content to the libr
 
 package gui;
 
+import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
@@ -1173,10 +1174,6 @@ public class AddItemBox {
         reject.setMinSize(90, 30);
         reject.setMaxSize(30, 10);
 
-        // Setting up button actions
-        accept.setOnAction(event -> System.out.println("Not set up yet"));
-        reject.setOnAction(event -> primaryStage.close());
-
         // Instructions
         Label instructionsLabel = new Label("Add a new video: ");
 
@@ -1230,8 +1227,39 @@ public class AddItemBox {
         Label regionLabel = new Label("Footage content: ");
 
         // Check box for propaganda material
-        CheckBox propagandaInput = new CheckBox();
-        Label propagandaLabel = new Label("Propaganda material: ");
+        CheckBox propagandaInput = new CheckBox("Propaganda material");
+
+        // Check box for regional history
+        CheckBox regionalHistoryInput = new CheckBox("Regional history");
+
+        // Adding button actions
+        accept.setOnAction(event -> {
+
+            // Archive footage information
+            try {
+                String userAvailability = availableInput.getValue();
+                String userTitle = titleInput.getText();
+                String userPublisher = publisherInput.getText();
+                String userSubDef = subDefInput.getValue();
+
+                String userDirector = directorInput.getText();
+                String userScreenwriter = screenWriterInput.getText();
+
+                boolean userRegionalHistory  = regionalHistoryInput.isSelected();
+                boolean userPropaganda = propagandaInput.isSelected();
+
+                ArchiveFootage archive = new ArchiveFootage(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userRegionalHistory, userPropaganda);
+                archive.setAvailability(userAvailability);
+                archive.addToDatabase();
+
+                primaryStage.close();
+
+            } catch (Exception e) {
+                AlertBox.programErrorSoft(e.toString());
+            }
+        });
+
+        reject.setOnAction(event -> primaryStage.close());
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -1259,8 +1287,8 @@ public class AddItemBox {
         layout.add(screenWriterInput, 1, 4);
         layout.add(availableLabel, 1, 5);
         layout.add(availableInput, 1, 6);
-        layout.add(propagandaLabel, 1, 7);
-        layout.add(propagandaInput, 1, 8);
+        layout.add(propagandaInput, 1, 7);
+        layout.add(regionalHistoryInput, 1, 8);
 
 
         // Buttons
