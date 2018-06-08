@@ -1,4 +1,4 @@
-package gui.inventoryDisplay;
+package gui.inventoryView;
 
 import inventory.LibraryDatabase;
 import inventory.print.book.Book;
@@ -66,7 +66,7 @@ public class BookView {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
-        TableColumn<Book, String> ddcLocationColumn = new TableColumn<>("DDC Number:");
+        TableColumn<Book, String> ddcLocationColumn = new TableColumn<>("DDC Number");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 

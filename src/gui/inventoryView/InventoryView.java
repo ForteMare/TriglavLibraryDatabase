@@ -1,4 +1,4 @@
-package gui.inventoryDisplay;
+package gui.inventoryView;
 
 import inventory.Inventory;
 import inventory.LibraryDatabase;

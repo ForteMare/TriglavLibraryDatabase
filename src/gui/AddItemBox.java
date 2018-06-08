@@ -257,7 +257,7 @@ public class AddItemBox {
         regionInput.setMinWidth(190);
         Label regionLabel = new Label("Region: ");
 
-        // Checkbox for hard-cover
+        // Checkbox for whether it contains maps
         CheckBox mapInput = new CheckBox("Contains maps");
 
         // Adding button actions
