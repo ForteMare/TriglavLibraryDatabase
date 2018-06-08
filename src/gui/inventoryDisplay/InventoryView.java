@@ -48,7 +48,7 @@ public class InventoryView {
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Inventory> table = new TableView<>();
         table.setItems(getInventory());
         table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
 
@@ -69,9 +69,7 @@ public class InventoryView {
     public static ObservableList<Inventory> getInventory() {
         ObservableList<Inventory> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getInventoryList());
 
         return inventory;
     }

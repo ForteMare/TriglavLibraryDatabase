@@ -552,11 +552,7 @@ public class AddItemBox {
 
                 boolean userInfoQuality;
 
-                if (informationTypeInput.getValue() == "Investigative Journalism") {
-                    userInfoQuality = true;
-                } else {
-                    userInfoQuality = false;
-                }
+                userInfoQuality = informationTypeInput.getValue().equals("Investigative Journalism");
 
                 Newspaper np1 = new Newspaper(userTitle, userAuthor, userSubtype, userPublication, userInfoQuality);
                 np1.setAvailability(userAvailability);
@@ -1102,11 +1098,7 @@ public class AddItemBox {
 
                 boolean userColor;
 
-                if (colorInput.getValue() == "Multicolor") {
-                    userColor = true;
-                } else {
-                    userColor = false;
-                }
+                userColor = colorInput.getValue().equals("Multicolor");
 
                 Documentary doc1 = new Documentary(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userColor);
                 doc1.setAvailability(userAvailability);

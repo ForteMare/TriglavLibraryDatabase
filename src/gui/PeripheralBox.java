@@ -119,7 +119,7 @@ class PeripheralBox {
                 PodcastView.viewInventory();
                 break;
             case "Book":
-                BookView.getInventory();
+                BookView.viewInventory();
                 break;
             case "Periodical":
                 PeriodicalView.viewInventory();

@@ -1,6 +1,4 @@
 /*
-MASTER
-
 Triglav Library Database has two main classes.
 
 >> For interacting with the program through JavaFX GUI, this is the main class.
@@ -27,11 +25,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/*
-This is the main window and where most operations are performed.
-Introductory windows or similar are not in consideration yet.
- */
-
 public class MainGUI extends Application {
     public static void main(String[] args) {
 
@@ -53,6 +46,7 @@ public class MainGUI extends Application {
             Button about = new Button("About");
             Button exit = new Button("Exit");
 
+
             // Set button size
             library.setMinSize(90, 30);
             library.setMaxSize(30, 10);
@@ -71,13 +65,6 @@ public class MainGUI extends Application {
 
             exit.setMinSize(90, 30);
             exit.setMaxSize(90, 30);
-
-
-            // VBox for holding button controls
-            VBox controls = new VBox(15);
-            controls.setPadding(new Insets(10));
-            controls.getChildren().addAll(library, addItem, importLibrary, exportLibrary, about, exit);
-
 
             // Control button commands
 
@@ -125,9 +112,14 @@ public class MainGUI extends Application {
             statusColumn.setMinWidth(100);
             statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
-            TableView<Inventory> table = new TableView<Inventory>();
+            TableView<Inventory> table = new TableView<>();
             table.setItems(getInventory());
             table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+
+            // VBox for holding button controls
+            VBox controls = new VBox(15);
+            controls.setPadding(new Insets(10));
+            controls.getChildren().addAll(library, addItem, importLibrary, exportLibrary, about, exit);
 
             // Main window will be made out of BorderPane
             BorderPane mainLayout = new BorderPane();
@@ -162,9 +154,7 @@ public class MainGUI extends Application {
     public ObservableList<Inventory> getInventory() {
         ObservableList<Inventory> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getInventoryList());
 
         return inventory;
     }

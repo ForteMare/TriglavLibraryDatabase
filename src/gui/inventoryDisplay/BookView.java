@@ -44,7 +44,7 @@ public class BookView {
         TableColumn<Book, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
-
+//
         //Author column
         TableColumn<Book, String> authorColumn = new TableColumn<>("Author");
         statusColumn.setMinWidth(100);
@@ -73,7 +73,7 @@ public class BookView {
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Book> table = new TableView<Book>();
+        TableView<Book> table = new TableView<>();
         table.setItems(getInventory());
         table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, hardCoverColumn, yearPublishedColumn, ddcLocationColumn);
 
@@ -91,12 +91,10 @@ public class BookView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Book> getInventory() {
+    private static ObservableList<Book> getInventory() {
         ObservableList<Book> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getBookList().size(); i++) {
-            inventory.add(LibraryDatabase.getBookList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getBookList());
 
         return inventory;
     }
