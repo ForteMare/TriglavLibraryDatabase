@@ -1,4 +1,4 @@
-package gui.inventoryDisplay;
+package gui.inventoryView;
 
 import inventory.Inventory;
 import inventory.LibraryDatabase;
@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class MusicView {
+public class PodcastView {
 
     public static void viewInventory() {
 

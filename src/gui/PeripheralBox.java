@@ -5,7 +5,7 @@ Class holds methods not essential to JavaFX and GUI that were causing too much c
 
 package gui;
 
-import gui.inventoryDisplay.*;
+import gui.inventoryView.*;
 import inventory.LibraryDatabase;
 import javafx.application.Platform;
 
