@@ -5,7 +5,7 @@ Triglav Library Database has two main classes.
 >> For interacting with the program through JavaFX GUI, MainGUI is the main class.
  */
 
-import inventory.DefaultLibrary;
+import inventory.InternalLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 
@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DefaultLibrary.startDatabase();
+        InternalLibrary.startDatabase();
 
 
         for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {

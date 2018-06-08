@@ -8,7 +8,7 @@ Triglav Library Database has two main classes.
 
 package gui;
 
-import inventory.DefaultLibrary;
+import inventory.InternalLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 import javafx.application.Application;
@@ -29,7 +29,7 @@ public class MainGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this
-        DefaultLibrary.startDatabase();
+        InternalLibrary.startDatabase();
 
         launch(args);
 
