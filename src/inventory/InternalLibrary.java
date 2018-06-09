@@ -14,6 +14,7 @@ import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
+import inventory.print.Print;
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
@@ -31,52 +32,62 @@ public class InternalLibrary {
 
     public static void startDatabase() {
 
-        Book book = new Book("Na Drini Cuprija", "Ivo Andric", "Historical Fiction", true, 1959, "CPT.223");
+        Print print = new Print("Journal of Science", "Multiple Authors", "Academia");
+        print.addToDatabase();
+
+        Book book = new Book("Na Drini cuprija", "Ivo Andric", "Historical Fiction", true, 1953, "CD-PPT");
         book.addToDatabase();
 
-        Periodical periodical = new Periodical("The New New Times", "Mr Meow Meow", "CatNews", "Annual");
+        Periodical periodical = new Periodical("Scientific American", "Multiple Authors", "Popular Science", "Weekly");
         periodical.addToDatabase();
 
-        Video video = new Video("Unmarked WWII Footage", "Unknown Publisher", "History", "Cpt Brian", "Unknown");
-        video.addToDatabase();
-
-        Audio audio = new Audio();
-        audio.addToDatabase();
-
-        TouristGuide touristGuide = new TouristGuide();
+        TouristGuide touristGuide = new TouristGuide("Biking in Slovenia", "Luka Vidmar", "Outdoors",
+                false, 2015, "CCTQ5", "Dolenjska", true);
         touristGuide.addToDatabase();
 
-        Newspaper newspaper = new Newspaper();
+        Newspaper newspaper = new Newspaper("The Intercept", "Glenn Greenwald", "Investigative Journalism", "Daily", false);
         newspaper.addToDatabase();
 
-        Movie movie = new Movie();
-        movie.addToDatabase();
-
-        Music music = new Music();
-        music.addToDatabase();
-
-        Novel novel = new Novel();
+        Novel novel = new Novel("One Hundred Years of Solitude", "Gabriel Garcia Marques",
+                "Magical Realism", false, 1991, "KWMN.541", "Spanish");
         novel.addToDatabase();
 
-        Magazine magazine = new Magazine();
+        Magazine magazine = new Magazine("Car World", "Multiple Authors", "Technology", "Monthly", true, false);
         magazine.addToDatabase();
 
-        Documentary documentary = new Documentary();
-        documentary.addToDatabase();
-
-        Audiobook audiobook = new Audiobook();
-        audiobook.addToDatabase();
-
-        ChildrensLiterature childrensLiterature = new ChildrensLiterature();
+        ChildrensLiterature childrensLiterature = new ChildrensLiterature("Winnie The Pooh", "That British Guy",
+                "Bednight Stories", false, 2001, "KPTZ13", true, false);
         childrensLiterature.addToDatabase();
 
-        Comic comic = new Comic();
+        Comic comic = new Comic("Captain America", "Jimmy Larson", "Superhero", "Monthly", false, false);
         comic.addToDatabase();
 
-        ArchiveFootage archiveFootage = new ArchiveFootage();
+        Video video = new Video("Vienna in 1931", "Schonbrunn Blick", "Historical Footage", "Joseph Oppenheimer", "Robert Schmidt");
+        video.addToDatabase();
+
+        Audio audio = new Audio("Sounds of Schwarzwald Forest", "BayernInteractive", "Nature Sounds", "MP3");
+        audio.addToDatabase();
+
+        Movie movie = new Movie("A Clockwork Orange", "Tristar Columbia", "Cult",
+                "Stanley Kubrick", "Conrad Lawrence", 8.8, false);
+        movie.addToDatabase();
+
+        Music music = new Music("The Queen", "Queen Productions", "Rock Opera", "FLAC", "Freddie Mercury", "Fat Bottomed Girls");
+        music.addToDatabase();
+
+        Documentary documentary = new Documentary("Planet Earth", "BBC Channel 4", "Nature",
+                "Billy Timmons", "Josh Chaney", true);
+        documentary.addToDatabase();
+
+        Audiobook audiobook = new Audiobook("Ender's Game", "EscapePod", "Science Fiction", "MKV", 180.53, "Orson Scott Card");
+        audiobook.addToDatabase();
+
+        ArchiveFootage archiveFootage = new ArchiveFootage("The Second Session of AVNOJ", "RT Jugoslavije",
+                "Propaganda", "Blazo Jelacic", "Edvard Stangelj", true, true);
         archiveFootage.addToDatabase();
 
-        Podcast podcast = new Podcast();
+        Podcast podcast = new Podcast("This American Life", "PBC Social", "Culture", "WAV", true, true);
         podcast.addToDatabase();
+
     }
 }

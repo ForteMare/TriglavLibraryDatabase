@@ -56,24 +56,24 @@ public class NovelView {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
-        TableColumn<Novel, String> hardCoverColumn = new TableColumn<>("Hard Cover");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
+        TableColumn<Novel, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
+        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
 
         //Year published column
-        TableColumn<Novel, String> yearPublishedColumn = new TableColumn<>("Year Published");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
+        TableColumn<Novel, Integer> yearPublishedColumn = new TableColumn<>("Year Published");
+        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
         TableColumn<Novel, String> ddcLocationColumn = new TableColumn<>("DDC Number");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
+        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         //Language column
         TableColumn<Novel, String> languageColumn = new TableColumn<>("Language");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("language"));
+        languageColumn.setMinWidth(100);
+        languageColumn.setCellValueFactory(new PropertyValueFactory<>("language"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());

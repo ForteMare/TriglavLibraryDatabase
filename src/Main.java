@@ -19,12 +19,17 @@ public class Main {
 
         InternalLibrary.startDatabase();
 
+//        System.out.println(LibraryDatabase.getNovelList().get(0).returnFinalInfo());
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            if(LibraryDatabase.getInventoryList().get(i).getInternalID() == 8) {
-                System.out.println(LibraryDatabase.getInventoryList().get(i).returnFinalInfo());
-            }
-        }
+        System.out.println(LibraryDatabase.getNovelList().get(0).getType());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getTitle());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getAvailability());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getAuthor());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getSubType());
+        System.out.println(LibraryDatabase.getNovelList().get(0).isHardCover());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getYearPublished());
+        System.out.println(LibraryDatabase.getNovelList().get(0).getLanguage());
+
     }
 }
 

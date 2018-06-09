@@ -47,28 +47,28 @@ public class BookView {
 //
         //Author column
         TableColumn<Book, String> authorColumn = new TableColumn<>("Author");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<Book, String> subTypeColumn = new TableColumn<>("Genre");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
-        TableColumn<Book, String> hardCoverColumn = new TableColumn<>("Hard Cover");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
+        TableColumn<Book, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
+        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
 
         //Year published column
-        TableColumn<Book, String> yearPublishedColumn = new TableColumn<>("Year Published");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
+        TableColumn<Book, Integer> yearPublishedColumn = new TableColumn<>("Year Published");
+        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
         TableColumn<Book, String> ddcLocationColumn = new TableColumn<>("DDC Number");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
+        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
