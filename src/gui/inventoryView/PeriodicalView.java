@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.print.periodical.Periodical;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -20,7 +20,7 @@ public class PeriodicalView {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Full Library Inventory");
+        primaryStage.setTitle("Periodical Inventory");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate button
@@ -31,26 +31,41 @@ public class PeriodicalView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Periodical, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Periodical, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Periodical, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Author column
+        TableColumn<Periodical, String> authorColumn = new TableColumn<>("Author");
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<Periodical, String> subTypeColumn = new TableColumn<>("Genre");
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Publication column
+        TableColumn<Periodical, String> publicationColumn = new TableColumn<>("Publication Frequency");
+        publicationColumn.setMinWidth(100);
+        publicationColumn.setCellValueFactory(new PropertyValueFactory<>("publicationFrequency"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Periodical> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +81,10 @@ public class PeriodicalView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Periodical> getInventory() {
+        ObservableList<Periodical> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getPeriodicalList());
 
         return inventory;
     }

@@ -46,7 +46,6 @@ public class MainGUI extends Application {
             Button about = new Button("About");
             Button exit = new Button("Exit");
 
-
             // Set button size
             library.setMinSize(90, 30);
             library.setMaxSize(30, 10);
