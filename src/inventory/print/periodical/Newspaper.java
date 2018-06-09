@@ -36,6 +36,7 @@ public class Newspaper extends Periodical {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addNewspaper(this);
+        LibraryDatabase.addPeriodical(this);
         LibraryDatabase.addInventory(this);
     }
 

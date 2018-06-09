@@ -37,6 +37,7 @@ public class Novel extends Book {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addNovel(this);
+        LibraryDatabase.addBook(this);
         LibraryDatabase.addInventory(this);
     }
 

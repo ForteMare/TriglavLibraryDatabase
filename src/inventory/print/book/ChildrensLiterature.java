@@ -46,6 +46,7 @@ public class ChildrensLiterature extends Book {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addChildrensBook(this);
+        LibraryDatabase.addBook(this);
         LibraryDatabase.addInventory(this);
     }
 

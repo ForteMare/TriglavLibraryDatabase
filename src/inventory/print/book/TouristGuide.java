@@ -46,6 +46,7 @@ public class TouristGuide extends Book {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addTouristGuide(this);
+        LibraryDatabase.addBook(this);
         LibraryDatabase.addInventory(this);
     }
 

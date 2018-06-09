@@ -46,6 +46,7 @@ public class Comic extends Periodical {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addComics(this);
+        LibraryDatabase.addPeriodical(this);
         LibraryDatabase.addInventory(this);
     }
 
