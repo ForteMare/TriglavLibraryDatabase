@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.print.book.ChildrensLiterature;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,62 @@ public class ChildrensLitView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<ChildrensLiterature, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<ChildrensLiterature, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<ChildrensLiterature, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+//
+        //Author column
+        TableColumn<ChildrensLiterature, String> authorColumn = new TableColumn<>("Author");
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<ChildrensLiterature, String> subTypeColumn = new TableColumn<>("Genre");
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Hard cover column
+        TableColumn<ChildrensLiterature, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
+        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
+
+        //Year published column
+        TableColumn<ChildrensLiterature, Integer> yearPublishedColumn = new TableColumn<>("Year Published");
+        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
+
+        //DDC Location column
+        TableColumn<ChildrensLiterature, String> ddcLocationColumn = new TableColumn<>("DDC Number");
+        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
+
+        //Illustrations column
+        TableColumn<ChildrensLiterature, Boolean> illustrationsColumn = new TableColumn<>("Contains Illustrations");
+        illustrationsColumn.setMinWidth(100);
+        illustrationsColumn.setCellValueFactory(new PropertyValueFactory<>("illustration"));
+
+        //Interactive column
+        TableColumn<ChildrensLiterature, Boolean> interactiveColumn = new TableColumn<>("Interactive");
+        interactiveColumn.setMinWidth(100);
+        interactiveColumn.setCellValueFactory(new PropertyValueFactory<>("interactive"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<ChildrensLiterature> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, hardCoverColumn,
+                yearPublishedColumn, illustrationsColumn, interactiveColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +102,10 @@ public class ChildrensLitView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<ChildrensLiterature> getInventory() {
+        ObservableList<ChildrensLiterature> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getChildrenLitList());
 
         return inventory;
     }
