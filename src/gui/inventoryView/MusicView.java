@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.multimedia.audio.Music;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,52 @@ public class MusicView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Music, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Music, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Music, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Publisher column
+        TableColumn<Music, String> publisherColumn = new TableColumn<>("Publisher");
+        publisherColumn.setMinWidth(100);
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+
+        //SubDef column
+        TableColumn<Music, String> subDefineColumn = new TableColumn<>("Genre");
+        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
+
+        //Format column
+        TableColumn<Music, String> formatColumn = new TableColumn<>("Format");
+        formatColumn.setMinWidth(100);
+        formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
+
+        //Artist column
+        TableColumn<Music, String> artistColumn = new TableColumn<>("Artist");
+        artistColumn.setMinWidth(100);
+        artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
+
+        //Album column
+        TableColumn<Music, String> albumColumn = new TableColumn<>("Album");
+        albumColumn.setMinWidth(100);
+        albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Music> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, publisherColumn, subDefineColumn, formatColumn,
+                artistColumn, albumColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +92,10 @@ public class MusicView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Music> getInventory() {
+        ObservableList<Music> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getMusicList());
 
         return inventory;
     }
