@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.multimedia.audio.Podcast;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,52 @@ public class PodcastView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Podcast, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Podcast, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Podcast, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Publisher column
+        TableColumn<Podcast, String> publisherColumn = new TableColumn<>("Publisher");
+        publisherColumn.setMinWidth(100);
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+
+        //SubDef column
+        TableColumn<Podcast, String> subDefineColumn = new TableColumn<>("Genre");
+        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
+
+        //Format column
+        TableColumn<Podcast, String> formatColumn = new TableColumn<>("Format");
+        formatColumn.setMinWidth(100);
+        formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
+
+        //Available offline column
+        TableColumn<Podcast, Boolean> availableOffline = new TableColumn<>("Available Offline");
+        availableOffline.setMinWidth(100);
+        availableOffline.setCellValueFactory(new PropertyValueFactory<>("availableOffline"));
+
+        //Featured column
+        TableColumn<Podcast, Boolean> featuredColumn = new TableColumn<>("Featured on Itunes");
+        featuredColumn.setMinWidth(100);
+        featuredColumn.setCellValueFactory(new PropertyValueFactory<>("featuredOnItunes"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Podcast> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, publisherColumn, subDefineColumn, formatColumn,
+                availableOffline, featuredColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +92,10 @@ public class PodcastView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Podcast> getInventory() {
+        ObservableList<Podcast> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getPodcastList());
 
         return inventory;
     }
