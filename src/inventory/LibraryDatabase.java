@@ -6,6 +6,7 @@
 
 package inventory;
 
+import inventory.multimedia.Multimedia;
 import inventory.multimedia.audio.Audio;
 import inventory.multimedia.audio.Audiobook;
 import inventory.multimedia.audio.Music;
@@ -14,6 +15,7 @@ import inventory.multimedia.video.ArchiveFootage;
 import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
+import inventory.print.Print;
 import inventory.print.book.Book;
 import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
@@ -49,6 +51,8 @@ public class LibraryDatabase {
     private static ArrayList<ArchiveFootage> archiveFootageList = new ArrayList<>();
     private static ArrayList<Comic> comicList = new ArrayList<>();
     private static ArrayList<Podcast> podcastList = new ArrayList<>();
+    private static ArrayList<Print> printList = new ArrayList<>();
+    private static ArrayList<Multimedia> multimediaList = new ArrayList<>();
 
     public LibraryDatabase() {
 
@@ -58,136 +62,86 @@ public class LibraryDatabase {
         return inventoryList;
     }
 
-    public static void setInventoryList(ArrayList<Inventory> inventoryList) {
-        LibraryDatabase.inventoryList = inventoryList;
-    }
-
     public static ArrayList<Book> getBookList() {
         return bookList;
-    }
-
-    public static void setBookList(ArrayList<Book> bookList) {
-        LibraryDatabase.bookList = bookList;
     }
 
     public static ArrayList<Video> getVideoList() {
         return videoList;
     }
 
-    public static void setVideoList(ArrayList<Video> videoList) {
-        LibraryDatabase.videoList = videoList;
-    }
-
     public static ArrayList<Periodical> getPeriodicalList() {
         return periodicalList;
-    }
-
-    public static void setPeriodicalList(ArrayList<Periodical> periodicalList) {
-        LibraryDatabase.periodicalList = periodicalList;
     }
 
     public static ArrayList<Audio> getAudioList() {
         return audioList;
     }
 
-    public static void setAudioList(ArrayList<Audio> audioList) {
-        LibraryDatabase.audioList = audioList;
-    }
-
     public static ArrayList<TouristGuide> getTouristGuideList() {
         return touristGuideList;
-    }
-
-    public static void setTouristGuideList(ArrayList<TouristGuide> touristGuideList) {
-        LibraryDatabase.touristGuideList = touristGuideList;
     }
 
     public static ArrayList<Movie> getMovieList() {
         return movieList;
     }
 
-    public static void setMovieList(ArrayList<Movie> movieList) {
-        LibraryDatabase.movieList = movieList;
-    }
-
     public static ArrayList<Newspaper> getNewspaperList() {
         return newspaperList;
-    }
-
-    public static void setNewspaperList(ArrayList<Newspaper> newspaperList) {
-        LibraryDatabase.newspaperList = newspaperList;
     }
 
     public static ArrayList<Music> getMusicList() {
         return musicList;
     }
 
-    public static void setMusicList(ArrayList<Music> musicList) {
-        LibraryDatabase.musicList = musicList;
-    }
-
     public static ArrayList<Novel> getNovelList() {
         return novelList;
-    }
-
-    public static void setNovelList(ArrayList<Novel> novelList) {
-        LibraryDatabase.novelList = novelList;
     }
 
     public static ArrayList<Documentary> getDocumentaryList() {
         return documentaryList;
     }
 
-    public static void setDocumentaryList(ArrayList<Documentary> documentaryList) {
-        LibraryDatabase.documentaryList = documentaryList;
-    }
-
     public static ArrayList<Magazine> getMagazineList() {
         return magazineList;
-    }
-
-    public static void setMagazineList(ArrayList<Magazine> magazineList) {
-        LibraryDatabase.magazineList = magazineList;
     }
 
     public static ArrayList<Audiobook> getAudiobookList() {
         return audiobookList;
     }
 
-    public static void setAudiobookList(ArrayList<Audiobook> audiobookList) {
-        LibraryDatabase.audiobookList = audiobookList;
-    }
-
     public static ArrayList<ChildrensLiterature> getChildrenLitList() {
         return childrenLitList;
-    }
-
-    public static void setChildrenLitList(ArrayList<ChildrensLiterature> childrenLitList) {
-        LibraryDatabase.childrenLitList = childrenLitList;
     }
 
     public static ArrayList<ArchiveFootage> getArchiveFootageList() {
         return archiveFootageList;
     }
 
-    public static void setArchiveFootageList(ArrayList<ArchiveFootage> archiveFootageList) {
-        LibraryDatabase.archiveFootageList = archiveFootageList;
-    }
-
     public static ArrayList<Comic> getComicList() {
         return comicList;
-    }
-
-    public static void setComicList(ArrayList<Comic> comicList) {
-        LibraryDatabase.comicList = comicList;
     }
 
     public static ArrayList<Podcast> getPodcastList() {
         return podcastList;
     }
 
-    public static void setPodcastList(ArrayList<Podcast> podcastList) {
-        LibraryDatabase.podcastList = podcastList;
+    public static ArrayList<Print> getPrintList() {
+        return printList;
+    }
+
+    public static ArrayList<Multimedia> getMultimediaList() {
+        return multimediaList;
+    }
+
+    // ######
+
+    public static void addPrint(Print print) {
+        printList.add(print);
+    }
+
+    public static void addMultimedia(Multimedia multimedia) {
+        multimediaList.add(multimedia);
     }
 
     public static void addInventory(Inventory inventory) {
