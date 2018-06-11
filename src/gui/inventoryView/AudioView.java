@@ -48,7 +48,7 @@ public class AudioView {
         //Publisher column
         TableColumn<Audio, String> publisherColumn = new TableColumn<>("Publisher");
         publisherColumn.setMinWidth(100);
-        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Audio, String> subDefineColumn = new TableColumn<>("Genre");

@@ -48,7 +48,7 @@ public class VideoView {
         //Publisher column
         TableColumn<Video, String> publisherColumn = new TableColumn<>("Publisher");
         publisherColumn.setMinWidth(100);
-        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Video, String> subDefineColumn = new TableColumn<>("Genre");
