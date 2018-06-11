@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.print.periodical.Newspaper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,47 @@ public class NewspaperView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Newspaper, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Newspaper, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Newspaper, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Author column
+        TableColumn<Newspaper, String> authorColumn = new TableColumn<>("Author");
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<Newspaper, String> subTypeColumn = new TableColumn<>("Genre");
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Publication column
+        TableColumn<Newspaper, String> publicationColumn = new TableColumn<>("Publication Frequency");
+        publicationColumn.setMinWidth(100);
+        publicationColumn.setCellValueFactory(new PropertyValueFactory<>("publicationFrequency"));
+
+        //Tabloid column
+        TableColumn<Newspaper, Boolean> tabloidColumn = new TableColumn<>("Tabloid");
+        tabloidColumn.setMinWidth(100);
+        tabloidColumn.setCellValueFactory(new PropertyValueFactory<>("tabloid"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Newspaper> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, publicationColumn,
+                tabloidColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +87,10 @@ public class NewspaperView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Newspaper> getInventory() {
+        ObservableList<Newspaper> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getNewspaperList());
 
         return inventory;
     }
