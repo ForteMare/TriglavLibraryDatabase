@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.multimedia.audio.Audiobook;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,52 @@ public class AudiobookView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Audiobook, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Audiobook, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Audiobook, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Publisher column
+        TableColumn<Audiobook, String> publisherColumn = new TableColumn<>("Publisher");
+        publisherColumn.setMinWidth(100);
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+
+        //SubDef column
+        TableColumn<Audiobook, String> subDefineColumn = new TableColumn<>("Genre");
+        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
+
+        //Format column
+        TableColumn<Audiobook, String> formatColumn = new TableColumn<>("Format");
+        formatColumn.setMinWidth(100);
+        formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
+
+        //Length column
+        TableColumn<Audiobook, Double> lengthColumn = new TableColumn<>("Length (min)");
+        lengthColumn.setMinWidth(100);
+        lengthColumn.setCellValueFactory(new PropertyValueFactory<>("length"));
+
+        //Narrator column
+        TableColumn<Audiobook, String> narratorColumn = new TableColumn<>("Format");
+        narratorColumn.setMinWidth(100);
+        narratorColumn.setCellValueFactory(new PropertyValueFactory<>("narrator"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Audiobook> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, publisherColumn, subDefineColumn, formatColumn,
+                lengthColumn, narratorColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +92,10 @@ public class AudiobookView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Audiobook> getInventory() {
+        ObservableList<Audiobook> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getAudiobookList());
 
         return inventory;
     }
