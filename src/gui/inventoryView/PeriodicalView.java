@@ -65,7 +65,7 @@ public class PeriodicalView {
 
         TableView<Periodical> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, publicationColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
