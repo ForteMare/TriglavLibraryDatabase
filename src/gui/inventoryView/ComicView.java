@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.print.periodical.Comic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,52 @@ public class ComicView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Comic, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Comic, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Comic, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Author column
+        TableColumn<Comic, String> authorColumn = new TableColumn<>("Author");
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<Comic, String> subTypeColumn = new TableColumn<>("Genre");
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Publication column
+        TableColumn<Comic, String> publicationColumn = new TableColumn<>("Publication Frequency");
+        publicationColumn.setMinWidth(100);
+        publicationColumn.setCellValueFactory(new PropertyValueFactory<>("publicationFrequency"));
+
+        //Manga column
+        TableColumn<Comic, Boolean> mangaColumn = new TableColumn<>("Manga");
+        mangaColumn.setMinWidth(100);
+        mangaColumn.setCellValueFactory(new PropertyValueFactory<>("manga"));
+
+        //Graphic novel column
+        TableColumn<Comic, String> graphicNovelColumn = new TableColumn<>("Graphic Novel");
+        graphicNovelColumn.setMinWidth(100);
+        graphicNovelColumn.setCellValueFactory(new PropertyValueFactory<>("graphicNovel"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Comic> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, publicationColumn,
+                mangaColumn, graphicNovelColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +92,10 @@ public class ComicView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Comic> getInventory() {
+        ObservableList<Comic> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getComicList());
 
         return inventory;
     }
