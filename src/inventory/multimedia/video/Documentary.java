@@ -35,6 +35,7 @@ public class Documentary extends Video {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addDocumentary(this);
+        LibraryDatabase.addVideo(this);
         LibraryDatabase.addInventory(this);
     }
 

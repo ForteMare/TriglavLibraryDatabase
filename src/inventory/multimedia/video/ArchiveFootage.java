@@ -46,6 +46,7 @@ public class ArchiveFootage extends Video {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addArchiveFootage(this);
+        LibraryDatabase.addVideo(this);
         LibraryDatabase.addInventory(this);
     }
 

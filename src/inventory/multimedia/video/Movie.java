@@ -46,6 +46,7 @@ public class Movie extends Video {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addMovie(this);
+        LibraryDatabase.addVideo(this);
         LibraryDatabase.addInventory(this);
     }
 
