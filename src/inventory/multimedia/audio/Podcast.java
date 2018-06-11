@@ -46,6 +46,7 @@ public class Podcast extends Audio {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addPodcast(this);
+        LibraryDatabase.addAudio(this);
         LibraryDatabase.addInventory(this);
     }
 

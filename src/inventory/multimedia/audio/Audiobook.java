@@ -48,6 +48,7 @@ public class Audiobook extends Audio {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addAudiobook(this);
+        LibraryDatabase.addAudio(this);
         LibraryDatabase.addInventory(this);
     }
 

@@ -46,6 +46,7 @@ public class Music extends Audio {
     @Override
     public void addToDatabase() {
         LibraryDatabase.addMusic(this);
+        LibraryDatabase.addAudio(this);
         LibraryDatabase.addInventory(this);
     }
 
