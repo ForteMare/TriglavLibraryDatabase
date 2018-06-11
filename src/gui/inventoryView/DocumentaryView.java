@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.multimedia.video.Documentary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,27 +31,51 @@ public class DocumentaryView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Documentary, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Documentary, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Documentary, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Publisher column
+        TableColumn<Documentary, String> publisherColumn = new TableColumn<>("Publisher");
+        publisherColumn.setMinWidth(100);
+        publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+
+        //SubDef column
+        TableColumn<Documentary, String> subDefineColumn = new TableColumn<>("Genre");
+        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
+
+        //Director column
+        TableColumn<Documentary, String> directorColumn = new TableColumn<>("Director");
+        directorColumn.setMinWidth(100);
+        directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
+
+        //Screenwriter column
+        TableColumn<Documentary, String> screenWriterColumn = new TableColumn<>("Screenwriter");
+        screenWriterColumn.setMinWidth(100);
+        screenWriterColumn.setCellValueFactory(new PropertyValueFactory<>("screenwriter"));
+
+        //Screenwriter column
+        TableColumn<Documentary, Boolean> colorColumn = new TableColumn<>("Multicolor");
+        colorColumn.setMinWidth(100);
+        colorColumn.setCellValueFactory(new PropertyValueFactory<>("color"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Documentary> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
-
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, publisherColumn, directorColumn, screenWriterColumn, colorColumn);
         // VBox for holding button controls
         VBox controls = new VBox(15);
         controls.setPadding(new Insets(10));
@@ -66,12 +90,10 @@ public class DocumentaryView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Documentary> getInventory() {
+        ObservableList<Documentary> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getDocumentaryList());
 
         return inventory;
     }
