@@ -1,7 +1,7 @@
 package gui.inventoryView;
 
-import inventory.Inventory;
 import inventory.LibraryDatabase;
+import inventory.print.periodical.Magazine;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -31,26 +31,52 @@ public class MagazineView {
         close.setMaxSize(30, 10);
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Magazine, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Magazine, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Magazine, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+        //Author column
+        TableColumn<Magazine, String> authorColumn = new TableColumn<>("Author");
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+
+        //SubType column
+        TableColumn<Magazine, String> subTypeColumn = new TableColumn<>("Genre");
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+
+        //Publication column
+        TableColumn<Magazine, String> publicationColumn = new TableColumn<>("Publication Frequency");
+        publicationColumn.setMinWidth(100);
+        publicationColumn.setCellValueFactory(new PropertyValueFactory<>("publicationFrequency"));
+
+        //Quality Print column
+        TableColumn<Magazine, Boolean> qualityPrintColumn = new TableColumn<>("Quality Print");
+        qualityPrintColumn.setMinWidth(100);
+        qualityPrintColumn.setCellValueFactory(new PropertyValueFactory<>("qualityPrint"));
+
+        //Nudity column
+        TableColumn<Magazine, Boolean> nudityColumn = new TableColumn<>("Contains Nudity");
+        nudityColumn.setMinWidth(100);
+        nudityColumn.setCellValueFactory(new PropertyValueFactory<>("containsNudity"));
 
         // Button action
         close.setOnAction(event -> primaryStage.close());
 
-        TableView<Inventory> table = new TableView<Inventory>();
+        TableView<Magazine> table = new TableView<>();
         table.setItems(getInventory());
-        table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
+        table.getColumns().addAll(statusColumn, typeColumn, titleColumn, authorColumn, subTypeColumn, publicationColumn,
+                qualityPrintColumn, nudityColumn);
 
         // VBox for holding button controls
         VBox controls = new VBox(15);
@@ -66,12 +92,10 @@ public class MagazineView {
     }
 
     //Get all of the inventory
-    public static ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public static ObservableList<Magazine> getInventory() {
+        ObservableList<Magazine> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+        inventory.addAll(LibraryDatabase.getMagazineList());
 
         return inventory;
     }
