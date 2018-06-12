@@ -5,7 +5,6 @@ Triglav Library Database has two main classes.
 >> For interacting with the program through IDE IO, Main is the main class
  */
 
-
 package gui;
 
 import inventory.InternalLibrary;
@@ -39,7 +38,7 @@ public class MainGUI extends Application {
     public void start(Stage primaryStage) {
         try {
             // Add relevant buttons
-            Button library = new Button("Library");
+            Button library = new Button("View...");
             Button addItem = new Button("Add Item");
             Button importLibrary = new Button("Import");
             Button exportLibrary = new Button("Export");
@@ -48,22 +47,22 @@ public class MainGUI extends Application {
 
             // Set button size
             library.setMinSize(90, 30);
-            library.setMaxSize(30, 10);
+
 
             addItem.setMinSize(90, 30);
-            addItem.setMaxSize(30, 10);
+
 
             importLibrary.setMinSize(90, 30);
-            importLibrary.setMaxSize(30, 10);
+
 
             exportLibrary.setMinSize(90, 30);
-            exportLibrary.setMaxSize(30, 10);
+
 
             about.setMinSize(90, 30);
-            about.setMaxSize(30, 10);
+
 
             exit.setMinSize(90, 30);
-            exit.setMaxSize(90, 30);
+
 
             // Control button commands
 
