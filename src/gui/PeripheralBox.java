@@ -5,9 +5,24 @@ Class holds methods not essential to JavaFX and GUI that were causing too much c
 
 package gui;
 
-import gui.inventoryView.*;
+import gui.inventoryView.InventoryView;
 import inventory.LibraryDatabase;
+import inventory.multimedia.audio.Audio;
+import inventory.multimedia.audio.Audiobook;
+import inventory.multimedia.audio.Music;
+import inventory.multimedia.audio.Podcast;
+import inventory.multimedia.video.ArchiveFootage;
+import inventory.multimedia.video.Documentary;
+import inventory.multimedia.video.Movie;
+import inventory.multimedia.video.Video;
+import inventory.print.book.Book;
+import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
+import inventory.print.book.TouristGuide;
+import inventory.print.periodical.Comic;
+import inventory.print.periodical.Magazine;
+import inventory.print.periodical.Newspaper;
+import inventory.print.periodical.Periodical;
 import javafx.application.Platform;
 
 import java.io.File;
@@ -87,49 +102,49 @@ class PeripheralBox {
                 Novel.displayNovelInventory();
                 break;
             case "Tourist Guide":
-                TouristGuideView.viewInventory();
+                TouristGuide.displayTouristGuideInventory();
                 break;
             case "Children's Lit":
-                ChildrensLitView.viewInventory();
+                ChildrensLiterature.displayChildrensLitInventory();
                 break;
             case "Newspaper":
-                NewspaperView.viewInventory();
+                Newspaper.displayNewspaperInventory();
                 break;
             case "Magazine":
-                MagazineView.viewInventory();
+                Magazine.displayMagazineInventory();
                 break;
             case "Comic":
-                ComicView.viewInventory();
+                Comic.displayComicInventory();
                 break;
             case "Movie":
-                MovieView.viewInventory();
+                Movie.displayMovieInventory();
                 break;
             case "Documentary":
-                DocumentaryView.viewInventory();
+                Documentary.displayDocumentaryInventory();
                 break;
             case "Archive Footage":
-                ArchiveFootageView.viewInventory();
+                ArchiveFootage.displayInventory();
                 break;
             case "Music":
-                MusicView.viewInventory();
+                Music.displayInventory();
                 break;
             case "Audiobook":
-                AudiobookView.viewInventory();
+                Audiobook.displayInventory();
                 break;
             case "Podcast":
-                PodcastView.viewInventory();
+                Podcast.displayPodcastInventory();
                 break;
             case "Book":
-                BookView.viewInventory();
+                Book.displayBookInventory();
                 break;
             case "Periodical":
-                PeriodicalView.viewInventory();
+                Periodical.displayPeriodicalInventory();
                 break;
             case "Video":
-                VideoView.viewInventory();
+                Video.displayVideoInventory();
                 break;
             case "Audio":
-                AudioView.viewInventory();
+                Audio.displayAudioInventory();
                 break;
             default:
                 AlertBox.programError("Error occurred in switch statement in PeripheralBox class");

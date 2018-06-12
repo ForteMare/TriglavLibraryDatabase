@@ -80,11 +80,11 @@ public class Documentary extends Video {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayDocumentaryInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Full Library Inventory");
+        primaryStage.setTitle("Documentary Inventory");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate button

@@ -78,7 +78,7 @@ public class Audio extends Multimedia {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayAudioInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
