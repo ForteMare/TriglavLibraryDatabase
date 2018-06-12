@@ -111,13 +111,13 @@ public class Novel extends Book {
 
         //Author column
         TableColumn<Novel, String> authorColumn = new TableColumn<>("Author");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        authorColumn.setMinWidth(100);
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<Novel, String> subTypeColumn = new TableColumn<>("Genre");
-        statusColumn.setMinWidth(100);
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
+        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
         TableColumn<Novel, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
@@ -153,7 +153,7 @@ public class Novel extends Book {
         controls.getChildren().addAll(table, close);
 
         // Setting up the scene
-        Scene scene = new Scene(controls, 530, 480);
+        Scene scene = new Scene(controls, 950, 450);
 
         // Setting up the stage
         primaryStage.setScene(scene);
