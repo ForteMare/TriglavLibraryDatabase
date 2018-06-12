@@ -80,7 +80,7 @@ public class Novel extends Book {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayNovelInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();

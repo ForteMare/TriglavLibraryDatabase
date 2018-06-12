@@ -84,7 +84,7 @@ class PeripheralBox {
                 InventoryView.viewInventory();
                 break;
             case "Novel":
-                Novel.displayInventory();
+                Novel.displayNovelInventory();
                 break;
             case "Tourist Guide":
                 TouristGuideView.viewInventory();
