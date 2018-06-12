@@ -113,42 +113,42 @@ public class Music extends Audio {
 
         //Title column
         TableColumn<Music, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Music, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Music, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Publisher column
         TableColumn<Music, String> publisherColumn = new TableColumn<>("Publisher");
-        publisherColumn.setMinWidth(100);
+        publisherColumn.setMinWidth(120);
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Music, String> subDefineColumn = new TableColumn<>("Genre");
-        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setMinWidth(120);
         subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
 
         //Format column
         TableColumn<Music, String> formatColumn = new TableColumn<>("Format");
-        formatColumn.setMinWidth(100);
+        formatColumn.setMinWidth(120);
         formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
 
         //Artist column
         TableColumn<Music, String> artistColumn = new TableColumn<>("Artist");
-        artistColumn.setMinWidth(100);
+        artistColumn.setMinWidth(120);
         artistColumn.setCellValueFactory(new PropertyValueFactory<>("artist"));
 
         //Album column
         TableColumn<Music, String> albumColumn = new TableColumn<>("Album");
-        albumColumn.setMinWidth(100);
+        albumColumn.setMinWidth(120);
         albumColumn.setCellValueFactory(new PropertyValueFactory<>("album"));
 
         // Button action

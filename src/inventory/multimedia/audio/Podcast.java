@@ -111,42 +111,42 @@ public class Podcast extends Audio {
 
         //Title column
         TableColumn<Podcast, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Podcast, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Podcast, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Publisher column
         TableColumn<Podcast, String> publisherColumn = new TableColumn<>("Publisher");
-        publisherColumn.setMinWidth(100);
+        publisherColumn.setMinWidth(120);
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Podcast, String> subDefineColumn = new TableColumn<>("Genre");
-        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setMinWidth(120);
         subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
 
         //Format column
         TableColumn<Podcast, String> formatColumn = new TableColumn<>("Format");
-        formatColumn.setMinWidth(100);
+        formatColumn.setMinWidth(120);
         formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
 
         //Available offline column
         TableColumn<Podcast, Boolean> availableOffline = new TableColumn<>("Available Offline");
-        availableOffline.setMinWidth(100);
+        availableOffline.setMinWidth(120);
         availableOffline.setCellValueFactory(new PropertyValueFactory<>("availableOffline"));
 
         //Featured column
         TableColumn<Podcast, Boolean> featuredColumn = new TableColumn<>("Featured on Itunes");
-        featuredColumn.setMinWidth(100);
+        featuredColumn.setMinWidth(120);
         featuredColumn.setCellValueFactory(new PropertyValueFactory<>("featuredOnItunes"));
 
         // Button action

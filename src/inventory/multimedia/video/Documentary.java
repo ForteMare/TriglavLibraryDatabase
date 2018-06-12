@@ -96,42 +96,42 @@ public class Documentary extends Video {
 
         //Title column
         TableColumn<Documentary, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Documentary, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Documentary, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Publisher column
         TableColumn<Documentary, String> publisherColumn = new TableColumn<>("Publisher");
-        publisherColumn.setMinWidth(100);
+        publisherColumn.setMinWidth(120);
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Documentary, String> subDefineColumn = new TableColumn<>("Genre");
-        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setMinWidth(120);
         subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
 
         //Director column
         TableColumn<Documentary, String> directorColumn = new TableColumn<>("Director");
-        directorColumn.setMinWidth(100);
+        directorColumn.setMinWidth(120);
         directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
 
         //Screenwriter column
         TableColumn<Documentary, String> screenWriterColumn = new TableColumn<>("Screenwriter");
-        screenWriterColumn.setMinWidth(100);
+        screenWriterColumn.setMinWidth(120);
         screenWriterColumn.setCellValueFactory(new PropertyValueFactory<>("screenwriter"));
 
         //Screenwriter column
         TableColumn<Documentary, Boolean> colorColumn = new TableColumn<>("Multicolor");
-        colorColumn.setMinWidth(100);
+        colorColumn.setMinWidth(120);
         colorColumn.setCellValueFactory(new PropertyValueFactory<>("color"));
 
         // Button action

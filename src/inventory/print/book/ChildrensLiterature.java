@@ -111,52 +111,52 @@ public class ChildrensLiterature extends Book {
 
         //Title column
         TableColumn<ChildrensLiterature, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<ChildrensLiterature, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<ChildrensLiterature, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Author column
         TableColumn<ChildrensLiterature, String> authorColumn = new TableColumn<>("Author");
-        authorColumn.setMinWidth(100);
+        authorColumn.setMinWidth(120);
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<ChildrensLiterature, String> subTypeColumn = new TableColumn<>("Genre");
-        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setMinWidth(120);
         subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
         TableColumn<ChildrensLiterature, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
-        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setMinWidth(120);
         hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
 
         //Year published column
         TableColumn<ChildrensLiterature, Integer> yearPublishedColumn = new TableColumn<>("Year Published");
-        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setMinWidth(120);
         yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
         TableColumn<ChildrensLiterature, String> ddcLocationColumn = new TableColumn<>("DDC Number");
-        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setMinWidth(120);
         ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         //Illustrations column
         TableColumn<ChildrensLiterature, Boolean> illustrationsColumn = new TableColumn<>("Contains Illustrations");
-        illustrationsColumn.setMinWidth(100);
+        illustrationsColumn.setMinWidth(120);
         illustrationsColumn.setCellValueFactory(new PropertyValueFactory<>("illustration"));
 
         //Interactive column
         TableColumn<ChildrensLiterature, Boolean> interactiveColumn = new TableColumn<>("Interactive");
-        interactiveColumn.setMinWidth(100);
+        interactiveColumn.setMinWidth(120);
         interactiveColumn.setCellValueFactory(new PropertyValueFactory<>("interactive"));
 
         // Button action

@@ -94,32 +94,32 @@ public class Audio extends Multimedia {
 
         //Title column
         TableColumn<Audio, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Audio, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Audio, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Publisher column
         TableColumn<Audio, String> publisherColumn = new TableColumn<>("Publisher");
-        publisherColumn.setMinWidth(100);
+        publisherColumn.setMinWidth(120);
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Audio, String> subDefineColumn = new TableColumn<>("Genre");
-        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setMinWidth(120);
         subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
 
         //Format column
         TableColumn<Audio, String> formatColumn = new TableColumn<>("Format");
-        formatColumn.setMinWidth(100);
+        formatColumn.setMinWidth(120);
         formatColumn.setCellValueFactory(new PropertyValueFactory<>("format"));
 
         // Button action

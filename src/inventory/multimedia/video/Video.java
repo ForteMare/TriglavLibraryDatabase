@@ -111,37 +111,37 @@ public class Video extends Multimedia {
 
         //Title column
         TableColumn<Video, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Video, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Video, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Publisher column
         TableColumn<Video, String> publisherColumn = new TableColumn<>("Publisher");
-        publisherColumn.setMinWidth(100);
+        publisherColumn.setMinWidth(120);
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
 
         //SubDef column
         TableColumn<Video, String> subDefineColumn = new TableColumn<>("Genre");
-        subDefineColumn.setMinWidth(100);
+        subDefineColumn.setMinWidth(120);
         subDefineColumn.setCellValueFactory(new PropertyValueFactory<>("subDefine"));
 
         //Director column
         TableColumn<Video, String> directorColumn = new TableColumn<>("Director");
-        directorColumn.setMinWidth(100);
+        directorColumn.setMinWidth(120);
         directorColumn.setCellValueFactory(new PropertyValueFactory<>("director"));
 
         //Screenwriter column
         TableColumn<Video, String> screenWriterColumn = new TableColumn<>("Screenwriter");
-        screenWriterColumn.setMinWidth(100);
+        screenWriterColumn.setMinWidth(120);
         screenWriterColumn.setCellValueFactory(new PropertyValueFactory<>("screenwriter"));
 
         // Button action

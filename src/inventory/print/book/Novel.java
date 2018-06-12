@@ -96,47 +96,47 @@ public class Novel extends Book {
 
         //Title column
         TableColumn<Novel, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Novel, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Novel, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Author column
         TableColumn<Novel, String> authorColumn = new TableColumn<>("Author");
-        authorColumn.setMinWidth(100);
+        authorColumn.setMinWidth(120);
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<Novel, String> subTypeColumn = new TableColumn<>("Genre");
-        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setMinWidth(120);
         subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
         TableColumn<Novel, Boolean> hardCoverColumn = new TableColumn<>("Hard Cover");
-        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setMinWidth(120);
         hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
 
         //Year published column
         TableColumn<Novel, Integer> yearPublishedColumn = new TableColumn<>("Year Published");
-        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setMinWidth(120);
         yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
         TableColumn<Novel, String> ddcLocationColumn = new TableColumn<>("DDC Number");
-        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setMinWidth(120);
         ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         //Language column
         TableColumn<Novel, String> languageColumn = new TableColumn<>("Language");
-        languageColumn.setMinWidth(100);
+        languageColumn.setMinWidth(120);
         languageColumn.setCellValueFactory(new PropertyValueFactory<>("language"));
 
         // Button action

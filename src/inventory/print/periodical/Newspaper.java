@@ -97,37 +97,37 @@ public class Newspaper extends Periodical {
 
         //Title column
         TableColumn<Newspaper, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<Newspaper, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<Newspaper, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         //Author column
         TableColumn<Newspaper, String> authorColumn = new TableColumn<>("Author");
-        authorColumn.setMinWidth(100);
+        authorColumn.setMinWidth(120);
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<Newspaper, String> subTypeColumn = new TableColumn<>("Genre");
-        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setMinWidth(120);
         subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Publication column
         TableColumn<Newspaper, String> publicationColumn = new TableColumn<>("Publication Frequency");
-        publicationColumn.setMinWidth(100);
+        publicationColumn.setMinWidth(120);
         publicationColumn.setCellValueFactory(new PropertyValueFactory<>("publicationFrequency"));
 
         //Tabloid column
         TableColumn<Newspaper, Boolean> tabloidColumn = new TableColumn<>("Tabloid");
-        tabloidColumn.setMinWidth(100);
+        tabloidColumn.setMinWidth(120);
         tabloidColumn.setCellValueFactory(new PropertyValueFactory<>("tabloid"));
 
         // Button action

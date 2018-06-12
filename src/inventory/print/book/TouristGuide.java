@@ -111,52 +111,52 @@ public class TouristGuide extends Book {
 
         //Title column
         TableColumn<TouristGuide, String> titleColumn = new TableColumn<>("Title");
-        titleColumn.setMinWidth(200);
+        titleColumn.setMinWidth(210);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
         TableColumn<TouristGuide, String> typeColumn = new TableColumn<>("Type");
-        typeColumn.setMinWidth(100);
+        typeColumn.setMinWidth(120);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
         TableColumn<TouristGuide, String> statusColumn = new TableColumn<>("Status");
-        statusColumn.setMinWidth(100);
+        statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 //
         //Author column
         TableColumn<TouristGuide, String> authorColumn = new TableColumn<>("Author");
-        authorColumn.setMinWidth(100);
+        authorColumn.setMinWidth(120);
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
         //SubType column
         TableColumn<TouristGuide, String> subTypeColumn = new TableColumn<>("Genre");
-        subTypeColumn.setMinWidth(100);
+        subTypeColumn.setMinWidth(120);
         subTypeColumn.setCellValueFactory(new PropertyValueFactory<>("subType"));
 
         //Hard cover column
         TableColumn<TouristGuide, String> hardCoverColumn = new TableColumn<>("Hard Cover");
-        hardCoverColumn.setMinWidth(100);
+        hardCoverColumn.setMinWidth(120);
         hardCoverColumn.setCellValueFactory(new PropertyValueFactory<>("hardCover"));
 
         //Year published column
         TableColumn<TouristGuide, String> yearPublishedColumn = new TableColumn<>("Year Published");
-        yearPublishedColumn.setMinWidth(100);
+        yearPublishedColumn.setMinWidth(120);
         yearPublishedColumn.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
 
         //DDC Location column
         TableColumn<TouristGuide, String> ddcLocationColumn = new TableColumn<>("DDC Number");
-        ddcLocationColumn.setMinWidth(100);
+        ddcLocationColumn.setMinWidth(120);
         ddcLocationColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         //DDC Location column
         TableColumn<TouristGuide, String> regionColumn = new TableColumn<>("Region");
-        regionColumn.setMinWidth(100);
+        regionColumn.setMinWidth(120);
         regionColumn.setCellValueFactory(new PropertyValueFactory<>("region"));
 
         //DDC Location column
         TableColumn<TouristGuide, String> containsMapsColumn = new TableColumn<>("Maps Included");
-        containsMapsColumn.setMinWidth(100);
+        containsMapsColumn.setMinWidth(120);
         containsMapsColumn.setCellValueFactory(new PropertyValueFactory<>("ddcLocation"));
 
         // Button action
