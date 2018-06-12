@@ -165,7 +165,7 @@ public class Music extends Audio {
         controls.getChildren().addAll(table, close);
 
         // Setting up the scene
-        Scene scene = new Scene(controls, 950, 450);
+        Scene scene = new Scene(controls, 1150, 450);
 
         // Setting up the stage
         primaryStage.setScene(scene);
