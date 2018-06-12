@@ -114,7 +114,7 @@ public class Book extends Print {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayBookInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();

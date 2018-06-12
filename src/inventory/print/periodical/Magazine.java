@@ -95,11 +95,11 @@ public class Magazine extends Periodical {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayMagazineInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Full Library Inventory");
+        primaryStage.setTitle("Magazine Inventory");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate button

@@ -95,11 +95,11 @@ public class Movie extends Video {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayMovieInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Movie");
+        primaryStage.setTitle("Movie Inventory");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate button

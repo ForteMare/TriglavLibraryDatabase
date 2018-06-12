@@ -95,11 +95,11 @@ public class Comic extends Periodical {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayComicInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Full Library Inventory");
+        primaryStage.setTitle("Comics Inventory");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Initiate button

@@ -95,7 +95,7 @@ public class ChildrensLiterature extends Book {
         return sb;
     }
 
-    public static void displayInventory() {
+    public static void displayChildrensLitInventory() {
 
         // Set up the primary stage
         Stage primaryStage = new Stage();
