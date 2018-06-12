@@ -44,7 +44,7 @@ public class ChildrensLitView {
         TableColumn<ChildrensLiterature, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
-//
+
         //Author column
         TableColumn<ChildrensLiterature, String> authorColumn = new TableColumn<>("Author");
         authorColumn.setMinWidth(100);
