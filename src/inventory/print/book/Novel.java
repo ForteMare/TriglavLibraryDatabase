@@ -108,7 +108,7 @@ public class Novel extends Book {
         TableColumn<Novel, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
-//
+
         //Author column
         TableColumn<Novel, String> authorColumn = new TableColumn<>("Author");
         statusColumn.setMinWidth(100);
