@@ -102,7 +102,7 @@ public class ChildrensLitView {
     }
 
     //Get all of the inventory
-    public static ObservableList<ChildrensLiterature> getInventory() {
+    private static ObservableList<ChildrensLiterature> getInventory() {
         ObservableList<ChildrensLiterature> inventory = FXCollections.observableArrayList();
 
         inventory.addAll(LibraryDatabase.getChildrenLitList());
