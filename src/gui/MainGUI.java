@@ -47,20 +47,10 @@ public class MainGUI extends Application {
 
             // Set button size
             library.setMinSize(90, 30);
-
-
             addItem.setMinSize(90, 30);
-
-
             importLibrary.setMinSize(90, 30);
-
-
             exportLibrary.setMinSize(90, 30);
-
-
             about.setMinSize(90, 30);
-
-
             exit.setMinSize(90, 30);
 
 

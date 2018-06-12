@@ -7,6 +7,7 @@ package gui;
 
 import gui.inventoryView.*;
 import inventory.LibraryDatabase;
+import inventory.print.book.Novel;
 import javafx.application.Platform;
 
 import java.io.File;
@@ -83,7 +84,7 @@ class PeripheralBox {
                 InventoryView.viewInventory();
                 break;
             case "Novel":
-                NovelView.viewInventory();
+                Novel.viewInventory();
                 break;
             case "Tourist Guide":
                 TouristGuideView.viewInventory();
