@@ -175,7 +175,7 @@ public class ArchiveFootage extends Video {
     }
 
     //Get all of the inventory
-    public static ObservableList<ArchiveFootage> getInventory() {
+    private static ObservableList<ArchiveFootage> getInventory() {
         ObservableList<ArchiveFootage> inventory = FXCollections.observableArrayList();
 
         inventory.addAll(LibraryDatabase.getArchiveFootageList());

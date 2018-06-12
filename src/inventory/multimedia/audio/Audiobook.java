@@ -173,7 +173,7 @@ public class Audiobook extends Audio {
     }
 
     //Get all of the inventory
-    public static ObservableList<Audiobook> getInventory() {
+    private static ObservableList<Audiobook> getInventory() {
         ObservableList<Audiobook> inventory = FXCollections.observableArrayList();
 
         inventory.addAll(LibraryDatabase.getAudiobookList());
