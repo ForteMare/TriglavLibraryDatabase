@@ -31,12 +31,12 @@ _AlertBox_ also holds error windows.
 - _PeripheralBox_ has brief, simple methods that other GUI classes utilize.
 These methods were causing too much clutter when integrated into other classes.
 - _AddItemBox_ has windows for adding ojbects to library. 16 methods for 16 objects.
-- Sub-package _inventoryDisplay_ is in a way similar to _AddItemBox_ except that instead of
-displaying windows through methods, data is held in seperate classes.
 - _AddItemBox_ class adds items to library; _inventoryDisplay_ package shows items in library.
 
 - Package _inventory_ holds classes which are 16 objects that can be added to the library.
 - Package _inventory_ also holds LibraryDatabase class which is a collection of ArrayLists of 16 library objects.
+- All classes (except Inventory) also include FX for displaying TableView of information. This was previously
+done through special package and set of classes, but is now merdeg with original classes for brevity.
 
 
 

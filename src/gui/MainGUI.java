@@ -116,7 +116,7 @@ public class MainGUI extends Application {
             mainLayout.setCenter(table);
 
             // Add layout to the scene
-            Scene mainScene = new Scene(mainLayout, 550, 400);
+            Scene mainScene = new Scene(mainLayout, 650, 500);
 
             // Add scene to the stage
             primaryStage.setScene(mainScene);
