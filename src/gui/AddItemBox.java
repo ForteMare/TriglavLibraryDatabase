@@ -1793,12 +1793,18 @@ public class AddItemBox {
 
             // Book information
             try {
+                /*
+                Parse variable goes first in case error is encoutnered, it goes straight to catch.
+                 */
+
+                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
                 boolean userHardCover = hardCoverInput.isSelected();
-                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userDDC = ddcInput.getText();
 
                 Book b1 = new Book(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC);
