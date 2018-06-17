@@ -97,13 +97,11 @@ class AlertBox {
 
         // Setting up the accept button
         accept = new Button("Ok");
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
+        accept.setPrefSize(90, 30);
 
         // Setting up the reject button
         reject = new Button("Cancel");
-        reject.setMinSize(90, 30);
-        reject.setMaxSize(30, 10);
+        reject.setPrefSize(90, 30);
 
         // Setting up the message label
         messageLabel = new Label("Enter inventory item to display: ");
@@ -148,13 +146,11 @@ class AlertBox {
 
         // Setting up the accept button
         accept = new Button("Ok");
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
+        accept.setPrefSize(90, 30);
 
         // Setting up the reject button
         reject = new Button("Cancel");
-        reject.setMinSize(90, 30);
-        reject.setMaxSize(30, 10);
+        reject.setPrefSize(90, 30);
 
         // Setting up the message label
         messageLabel = new Label("Enter item to add to the library: ");
@@ -197,8 +193,7 @@ class AlertBox {
 
         // Setting up the accept button
         accept = new Button("OK");
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
+        accept.setPrefSize(90, 30);
 
         // Setting up the message label
         messageLabel = new Label(actionPerformed);
@@ -223,18 +218,18 @@ class AlertBox {
         // Credits roll:
         String creditsRoll = "";
 
-        creditsRoll += "Program Name: TRIGLAV\u2122 Library Database\n\n" +
-                "Build: v 0.9.4 BETA,\tMade on: May 20, 2018\n\n" +
+        creditsRoll += "Program Name: TRIGLAV Library Database\n\n" +
+                "Build: v 0.9.4 BETA,\tCreated on: May 20, 2018\n\n" +
                 "Program Powered by: Java Virtual Machine\n\n" +
-                "Created by: Luka Sapund\u017ei\u0107\n\n\n\n" +
+                "Created by: Luka Sapundžić" +
                 "\t\tSpecial Thanks To:\n\n" +
                 "- Faculty of Information Studies in Novo Mesto\n" +
-                "- Prof. Dr. Bernard \u017denko\n" +
-                "- Course Assistant Borut Lu\u017ear\n\n" +
+                "- Prof. Dr. Bernard Ženko" +
+                "- Course Assistant Borut Lužar" +
                 "- COLO Laboratory Experts Slovenia\n\n" +
                 "- Dr. Philip Birget\n" +
                 "- Denis Pingin\n" +
-                "- Nikola Voji\u010Di\u0107\n" +
+                "- Nikola Vojičić" +
                 "- Dr. Pavel Zheltov\n";
 
         // Setting up the primary stage
@@ -277,10 +272,8 @@ class AlertBox {
         reject = new Button("No");
 
         // Set button size
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
-        reject.setMinSize(90, 30);
-        reject.setMaxSize(90, 30);
+        accept.setPrefSize(90, 30);
+        reject.setPrefSize(90, 30);
 
         // Declare label
         messageLabel = new Label();

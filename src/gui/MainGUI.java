@@ -46,15 +46,15 @@ public class MainGUI extends Application {
             Button exit = new Button("Exit");
 
             // Inventory display control buttons
-            Button delete = new Button("Delete Item");
+            Button delete = new Button("Delete");
 
             // Set button size
-            library.setMinSize(90, 30);
-            addItem.setMinSize(90, 30);
-            importLibrary.setMinSize(90, 30);
-            exportLibrary.setMinSize(90, 30);
-            about.setMinSize(90, 30);
-            exit.setMinSize(90, 30);
+            library.setPrefSize(90, 30);
+            addItem.setPrefSize(90, 30);
+            importLibrary.setPrefSize(90, 30);
+            exportLibrary.setPrefSize(90, 30);
+            about.setPrefSize(90, 30);
+            exit.setPrefSize(90, 30);
 
             // Inventory buttons should maybe be different size
             delete.setPrefSize(90, 30);
@@ -110,19 +110,24 @@ public class MainGUI extends Application {
             table.setItems(getInventory());
             table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
 
+            // VBox for holding Table and control buttons.
+            VBox tableControls = new VBox(15);
+            tableControls.setPadding(new Insets(10));
+            tableControls.getChildren().addAll(table, delete);
+
             // VBox for holding button controls
-            VBox controls = new VBox(15);
-            controls.setPadding(new Insets(10));
-            controls.getChildren().addAll(library, addItem, importLibrary, exportLibrary, about, exit);
+            VBox masterControls = new VBox(15);
+            masterControls.setPadding(new Insets(10));
+            masterControls.getChildren().addAll(library, addItem, importLibrary, exportLibrary, about, exit);
 
             // Main window will be made out of BorderPane
             BorderPane mainLayout = new BorderPane();
             mainLayout.setPadding(new Insets(10));
-            mainLayout.setLeft(controls);
-            mainLayout.setCenter(table);
+            mainLayout.setLeft(masterControls);
+            mainLayout.setCenter(tableControls);
 
             // Add layout to the scene
-            Scene mainScene = new Scene(mainLayout, 650, 500);
+            Scene mainScene = new Scene(mainLayout, 600, 520);
 
             // Add scene to the stage
             primaryStage.setScene(mainScene);
