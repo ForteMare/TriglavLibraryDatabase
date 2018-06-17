@@ -119,10 +119,11 @@ public class AddItemBox {
 
             // Novel information input
 
-            /* To prevent program from entering information even if it encounters exception, variables most prone
+            try {
+
+                /* To prevent program from entering information even if it encounters exception, variables most prone
             to getting incorrect input are put first.
              */
-            try {
                 int userYear = Integer.parseInt(yearInput.getText());
 
                 String userAvailability = availableInput.getValue();
@@ -135,9 +136,9 @@ public class AddItemBox {
 
                 String userLanguage = languageInput.getValue();
 
-                Novel n1 = new Novel(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userLanguage);
-                n1.setAvailability(userAvailability);
-                n1.addToDatabase();
+                Novel novel = new Novel(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userLanguage);
+                novel.setAvailability(userAvailability);
+                novel.addToDatabase();
 
                 primaryStage.close();
 
@@ -272,20 +273,27 @@ public class AddItemBox {
 
             // Tourist guide information
             try {
+
+                /*
+            To prevent program from entering information even if it encounters exception, variables most prone
+            to getting incorrect input are put first.
+             */
+                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
                 boolean userHardCover = hardCoverInput.isSelected();
-                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userDDC = ddcInput.getText();
 
                 String userRegion = regionInput.getValue();
                 boolean userMaps = mapInput.isSelected();
 
-                TouristGuide tg1 = new TouristGuide(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userRegion, userMaps);
-                tg1.setAvailability(userAvailability);
-                tg1.addToDatabase();
+                TouristGuide touristGuide = new TouristGuide(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userRegion, userMaps);
+                touristGuide.setAvailability(userAvailability);
+                touristGuide.addToDatabase();
 
                 primaryStage.close();
 
@@ -322,9 +330,7 @@ public class AddItemBox {
         layout.add(availableInput, 1, 4);
         layout.add(regionLabel, 1, 5);
         layout.add(regionInput, 1, 6);
-//        layout.add(hardcoverLabel, 1, 7);
         layout.add(hardCoverInput, 1, 7);
-//        layout.add(mapLabel, 1, 9);
         layout.add(mapInput, 1, 8);
 
         // Buttons
@@ -414,20 +420,28 @@ public class AddItemBox {
 
             // Children Lit information
             try {
+
+                /* To prevent program from entering information even if it encounters exception, variables most prone
+            to getting incorrect input are put first.
+             */
+
+                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
                 boolean userHardCover = hardCoverInput.isSelected();
-                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userDDC = ddcInput.getText();
 
                 boolean userIllustration = illustrationInput.isSelected();
                 boolean userInteractive = interactiveInput.isSelected();
 
-                ChildrensLiterature cl1 = new ChildrensLiterature(userTitle, userAuthor, userSubtype, userHardCover, userYear, userDDC, userIllustration, userInteractive);
-                cl1.setAvailability(userAvailability);
-                cl1.addToDatabase();
+                ChildrensLiterature childrensLiterature = new ChildrensLiterature(userTitle, userAuthor, userSubtype,
+                        userHardCover, userYear, userDDC, userIllustration, userInteractive);
+                childrensLiterature.setAvailability(userAvailability);
+                childrensLiterature.addToDatabase();
 
                 primaryStage.close();
 
@@ -560,9 +574,9 @@ public class AddItemBox {
 
                 userInfoQuality = informationTypeInput.getValue().equals("Investigative Journalism");
 
-                Newspaper np1 = new Newspaper(userTitle, userAuthor, userSubtype, userPublication, userInfoQuality);
-                np1.setAvailability(userAvailability);
-                np1.addToDatabase();
+                Newspaper newspaper = new Newspaper(userTitle, userAuthor, userSubtype, userPublication, userInfoQuality);
+                newspaper.setAvailability(userAvailability);
+                newspaper.addToDatabase();
 
                 primaryStage.close();
 
@@ -692,9 +706,9 @@ public class AddItemBox {
                 boolean userQualityPrint = qualityPrintInput.isSelected();
                 boolean userContainsNudity = containsNudityInput.isSelected();
 
-                Magazine ma1 = new Magazine(userTitle, userAuthor, userSubtype, userPublication, userQualityPrint, userContainsNudity);
-                ma1.setAvailability(userAvailability);
-                ma1.addToDatabase();
+                Magazine magazine = new Magazine(userTitle, userAuthor, userSubtype, userPublication, userQualityPrint, userContainsNudity);
+                magazine.setAvailability(userAvailability);
+                magazine.addToDatabase();
 
                 primaryStage.close();
 
@@ -799,17 +813,6 @@ public class AddItemBox {
         publicationInput.setMinWidth(190);
         Label publicationLabel = new Label("Publication frequency:");
 
-        // Items specific to Comic class
-//
-//        // Checking whether it is manga or a graphic novel
-//        ChoiceBox<String> graphicNovelInput = new ChoiceBox<>();
-//        graphicNovelInput.getItems().addAll("Manga", "Graphic Novel");
-//        graphicNovelInput.setValue("Graphic Novel");
-//        graphicNovelInput.setMinWidth(190);
-//        Label graphicNovelLabel = new Label("Graphic novel or manga: ");
-//
-        //
-
         CheckBox graphicNovelInput = new CheckBox("Graphic novel");
         CheckBox mangaInput = new CheckBox("Manga");
 
@@ -857,10 +860,12 @@ public class AddItemBox {
         layout.add(subTypeInput, 0, 6);
 
         // Second column
-        layout.add(availableLabel, 1, 1);
-        layout.add(availableInput, 1, 2);
-        layout.add(graphicNovelInput, 1, 3);
-        layout.add(mangaInput, 1, 4);
+        layout.add(publicationLabel, 1, 1);
+        layout.add(publicationInput, 1, 2);
+        layout.add(availableLabel, 1, 3);
+        layout.add(availableInput, 1, 4);
+        layout.add(graphicNovelInput, 1, 5);
+        layout.add(mangaInput, 1, 6);
 
         // Buttons
         layout.add(accept, 0, 11);
@@ -955,6 +960,12 @@ public class AddItemBox {
 
             // Movie information
             try {
+                /*
+                To prevent program from adding object and throwing exception, the exception-prone variable is set first.
+                In case of error, immediately goes to catch.
+                 */
+                double userIMDBRating = Double.parseDouble(ratingInput.getText());
+
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userPublisher = publisherInput.getText();
@@ -963,7 +974,7 @@ public class AddItemBox {
                 String userDirector = directorInput.getText();
                 String userScreenwriter = screenWriterInput.getText();
 
-                double userIMDBRating = Double.parseDouble(ratingInput.getText());
+
                 boolean userHollywood = hollywoodInput.isSelected();
 
                 Movie mov1 = new Movie(userTitle, userPublisher, userSubDef, userDirector, userScreenwriter, userIMDBRating, userHollywood);
