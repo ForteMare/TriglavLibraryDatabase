@@ -25,6 +25,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class MainGUI extends Application {
+
     public static void main(String[] args) {
 
         // InternalLibrary is temporary, for testing the program. In final version, this should generally not exist.
@@ -59,8 +60,40 @@ public class MainGUI extends Application {
             // Inventory buttons should maybe be different size
             delete.setPrefSize(90, 30);
 
+            // Adding Table View of Inventory to the main screen
+
+            //Title column
+            TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+            titleColumn.setMinWidth(200);
+            titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+            //Type column
+            TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+            typeColumn.setMinWidth(100);
+            typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+
+            //Status column
+            TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+            statusColumn.setMinWidth(100);
+            statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+            TableView<Inventory> table = new TableView<>();
+            table.setItems(getInventory());
+            table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
 
             // Control button commands
+
+            // ##
+            delete.setOnAction(event -> {
+                Inventory selectedItem = table.getSelectionModel().getSelectedItem();
+                table.getItems().remove(selectedItem);
+
+                LibraryDatabase.getInventoryList().remove(selectedItem);
+                LibraryDatabase.getNovelList().remove(selectedItem);
+                LibraryDatabase.getMovieList().remove(selectedItem);
+
+                //??????????
+            });
 
             // Pressing library button shows items in the library in TableView
             library.setOnAction(e -> AlertBox.contentSelect());
@@ -88,27 +121,6 @@ public class MainGUI extends Application {
 
             // Safely exits the program
             exit.setOnAction(e -> Platform.exit());
-
-            // Adding Table View of Inventory to the main screen
-
-            //Title column
-            TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
-            titleColumn.setMinWidth(200);
-            titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-
-            //Type column
-            TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
-            typeColumn.setMinWidth(100);
-            typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-
-            //Status column
-            TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
-            statusColumn.setMinWidth(100);
-            statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
-
-            TableView<Inventory> table = new TableView<>();
-            table.setItems(getInventory());
-            table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
 
             // VBox for holding Table and control buttons.
             VBox tableControls = new VBox(15);
@@ -150,7 +162,7 @@ public class MainGUI extends Application {
     }
 
     //Get all of the inventory
-    public ObservableList<Inventory> getInventory() {
+    private ObservableList<Inventory> getInventory() {
         ObservableList<Inventory> inventory = FXCollections.observableArrayList();
 
         inventory.addAll(LibraryDatabase.getInventoryList());

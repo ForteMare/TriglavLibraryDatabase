@@ -221,11 +221,11 @@ class AlertBox {
         creditsRoll += "Program Name: TRIGLAV Library Database\n\n" +
                 "Build: v 0.9.4 BETA,\tCreated on: May 20, 2018\n\n" +
                 "Program Powered by: Java Virtual Machine\n\n" +
-                "Created by: Luka Sapundžić" +
-                "\t\tSpecial Thanks To:\n\n" +
+                "Created by: Luka Sapundžić\n\n\n" +
+                "\t\tSpecial Thanks To:\n\n\n" +
                 "- Faculty of Information Studies in Novo Mesto\n" +
-                "- Prof. Dr. Bernard Ženko" +
-                "- Course Assistant Borut Lužar" +
+                "- Prof. Dr. Bernard Ženko\n" +
+                "- Course Assistant Borut Lužar\n" +
                 "- COLO Laboratory Experts Slovenia\n\n" +
                 "- Dr. Philip Birget\n" +
                 "- Denis Pingin\n" +
@@ -234,7 +234,7 @@ class AlertBox {
 
         // Setting up the primary stage
         primaryStage = new Stage();
-        primaryStage.setTitle("About This Software");
+        primaryStage.setTitle("About The Software");
         primaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Setting up the accept button
