@@ -117,14 +117,20 @@ public class AddItemBox {
 
         accept.setOnAction(event -> {
 
-            // Novel information
+            // Novel information input
+
+            /* To prevent program from entering information even if it encounters exception, variables most prone
+            to getting incorrect input are put first.
+             */
             try {
+                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userAvailability = availableInput.getValue();
                 String userTitle = titleInput.getText();
                 String userAuthor = authorInput.getText();
                 String userSubtype = subTypeInput.getValue();
                 boolean userHardCover = hardCoverInput.isSelected();
-                int userYear = Integer.parseInt(yearInput.getText());
+
                 String userDDC = ddcInput.getText();
 
                 String userLanguage = languageInput.getValue();

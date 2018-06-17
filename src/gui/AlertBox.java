@@ -312,15 +312,14 @@ class AlertBox {
 
     static void programErrorSoft(String exceptionType) {
 
-        // Setting up the primary stage
-        primaryStage = new Stage();
-        primaryStage.setTitle("SYSTEM ERROR");
-        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        // Create secondary stage: if primaryStage initialized, other alert boxes will collide with it. Window will not close
+        Stage secondaryStage = new Stage();
+        secondaryStage.setTitle("General Error");
+        secondaryStage.initModality(Modality.APPLICATION_MODAL);
 
         // Setting up the accept button
         accept = new Button("OK");
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
+        accept.setPrefSize(90, 30);
 
         // Setting up the message label
         Label programEndLabel = new Label("Software has encountered an error. Program has been terminated.");
@@ -332,17 +331,17 @@ class AlertBox {
         vBox.setAlignment(Pos.CENTER);
 
         // Button action
-        accept.setOnAction(event -> primaryStage.close());
+        accept.setOnAction(event -> secondaryStage.close());
 
         // Setting up the scene
         scene = new Scene(vBox, 420, 120);
 
         // Finalize stage
-        primaryStage.setScene(scene);
-        primaryStage.showAndWait();
+        secondaryStage.setScene(scene);
+        secondaryStage.showAndWait();
     }
 
-    static void programError(String exceptionType) {
+    static void programFatalError(String exceptionType) {
 
         // Setting up the primary stage
         primaryStage = new Stage();
@@ -351,11 +350,10 @@ class AlertBox {
 
         // Setting up the accept button
         accept = new Button("OK");
-        accept.setMinSize(90, 30);
-        accept.setMaxSize(30, 10);
+        accept.setPrefSize(90, 30);
 
         // Setting up the message label
-        Label programEndLabel = new Label("Software has encountered an error. Program has been terminated.");
+        Label programEndLabel = new Label("Software has encountered a fatal error. Program has been terminated.");
         messageLabel = new Label("Error type: " + exceptionType);
 
         // Layout design

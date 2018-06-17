@@ -87,7 +87,7 @@ class SupportBox {
                 AddItemBox.addAudio();
                 break;
             default:
-                AlertBox.programError("Error occurred in switch statement in SupportBox class");
+                AlertBox.programFatalError("Error occurred in switch statement in SupportBox class");
 
         }
     }
@@ -148,7 +148,7 @@ class SupportBox {
                 Audio.displayAudioInventory();
                 break;
             default:
-                AlertBox.programError("Error occurred in switch statement in SupportBox class");
+                AlertBox.programFatalError("Error occurred in switch statement in SupportBox class");
 
         }
     }
@@ -162,7 +162,7 @@ class SupportBox {
                 Platform.exit();
             }
         } catch (Exception e) {
-            AlertBox.programError(e.toString());
+            AlertBox.programFatalError(e.toString());
 
         }
     }

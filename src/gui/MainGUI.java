@@ -79,7 +79,7 @@ public class MainGUI extends Application {
                 } catch (Exception e1) {
 
                     System.out.println(e1.getMessage());
-                    AlertBox.programError(e1.toString());
+                    AlertBox.programFatalError(e1.toString());
                 }
             });
 
@@ -143,7 +143,7 @@ public class MainGUI extends Application {
             primaryStage.show();
 
         } catch (Exception e) {
-            AlertBox.programError(e.toString());
+            AlertBox.programFatalError(e.toString());
             System.out.println(e.toString());
         }
 
