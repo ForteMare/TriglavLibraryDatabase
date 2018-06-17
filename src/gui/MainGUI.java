@@ -37,13 +37,16 @@ public class MainGUI extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Add relevant buttons
+            // General control buttons
             Button library = new Button("View...");
             Button addItem = new Button("Add Item");
             Button importLibrary = new Button("Import");
             Button exportLibrary = new Button("Export");
             Button about = new Button("About");
             Button exit = new Button("Exit");
+
+            // Inventory display control buttons
+            Button delete = new Button("Delete Item");
 
             // Set button size
             library.setMinSize(90, 30);
@@ -52,6 +55,9 @@ public class MainGUI extends Application {
             exportLibrary.setMinSize(90, 30);
             about.setMinSize(90, 30);
             exit.setMinSize(90, 30);
+
+            // Inventory buttons should maybe be different size
+            delete.setPrefSize(90, 30);
 
 
             // Control button commands
