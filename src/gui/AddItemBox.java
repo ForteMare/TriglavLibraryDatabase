@@ -1684,9 +1684,7 @@ public class AddItemBox {
         layout.add(fileFormatInput, 1, 2);
         layout.add(availableLabel, 1, 3);
         layout.add(availableInput, 1, 4);
-//        layout.add(featuredLabel, 1, 5);
         layout.add(featuredInput, 1, 5);
-//        layout.add(offlineLabel, 1, 7);
         layout.add(offlineInput, 1, 6);
 
         // Buttons

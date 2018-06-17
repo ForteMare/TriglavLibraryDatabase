@@ -29,7 +29,7 @@ import java.io.File;
 import java.io.PrintWriter;
 
 
-class PeripheralBox {
+class SupportBox {
 
     /*
     I was unable to find an FX control that would substitute itemSelect.
@@ -87,7 +87,7 @@ class PeripheralBox {
                 AddItemBox.addAudio();
                 break;
             default:
-                AlertBox.programError("Error occurred in switch statement in PeripheralBox class");
+                AlertBox.programError("Error occurred in switch statement in SupportBox class");
 
         }
     }
@@ -148,7 +148,7 @@ class PeripheralBox {
                 Audio.displayAudioInventory();
                 break;
             default:
-                AlertBox.programError("Error occurred in switch statement in PeripheralBox class");
+                AlertBox.programError("Error occurred in switch statement in SupportBox class");
 
         }
     }

@@ -27,7 +27,7 @@ import javafx.stage.Stage;
 public class MainGUI extends Application {
     public static void main(String[] args) {
 
-        // Delete this
+        // InternalLibrary is temporary, for testing the program. In final version, this should generally not exist.
         InternalLibrary.startDatabase();
 
         launch(args);
@@ -57,10 +57,10 @@ public class MainGUI extends Application {
             // Control button commands
 
             // Pressing library button shows items in the library in TableView
-            library.setOnAction(e -> AlertBox.showContent());
+            library.setOnAction(e -> AlertBox.contentSelect());
 
             // Adds a new item to the inventory
-            addItem.setOnAction(e -> AlertBox.addToLibrary());
+            addItem.setOnAction(e -> AlertBox.contentAdd());
 
             // Imports library from a .txt file
             importLibrary.setOnAction(e -> AlertBox.generalNotification("Library Imported", "Library has been imported into the program"));
@@ -69,7 +69,7 @@ public class MainGUI extends Application {
             exportLibrary.setOnAction(e -> {
                 try {
                     // Button press creates new window where user inputs file name. File name is sent to supportBox to be printed as export file name
-                    PeripheralBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
+                    SupportBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
                 } catch (Exception e1) {
 
                     System.out.println(e1.getMessage());
@@ -125,7 +125,7 @@ public class MainGUI extends Application {
             // Show alert box when closing the program
             primaryStage.setOnCloseRequest(event -> {
                 event.consume();
-                PeripheralBox.closingProgram();
+                SupportBox.closingProgram();
             });
 
             // Show
