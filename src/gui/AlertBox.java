@@ -227,10 +227,10 @@ class AlertBox {
                 "- Prof. Dr. Bernard Ženko\n" +
                 "- Course Assistant Borut Lužar\n" +
                 "- COLO Laboratory Experts Slovenia\n\n" +
-                "- Dr. Philip Birget\n" +
                 "- Denis Pingin\n" +
-                "- Nikola Vojičić" +
-                "- Dr. Pavel Zheltov\n";
+                "- Dr. Pavel Zheltov\n" +
+                "- Nikola Vojičić\n" +
+                "";
 
         // Setting up the primary stage
         primaryStage = new Stage();

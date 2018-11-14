@@ -7,7 +7,6 @@ Triglav Library Database has two main classes.
 
 package gui;
 
-import inventory.InternalLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 import javafx.application.Application;
@@ -26,14 +25,6 @@ import javafx.stage.Stage;
 
 public class MainGUI extends Application {
 
-    public static void main(String[] args) {
-
-        // InternalLibrary is temporary, for testing the program. In final version, this should generally not exist.
-        InternalLibrary.startDatabase();
-
-        launch(args);
-
-    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -94,6 +85,7 @@ public class MainGUI extends Application {
 
                 //??????????
             });
+
 
             // Pressing library button shows items in the library in TableView
             library.setOnAction(e -> AlertBox.contentSelect());
