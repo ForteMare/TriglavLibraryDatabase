@@ -130,7 +130,7 @@ public class MainGUI extends Application {
             // Adds a new item to the inventory
             addItem.setOnAction(e -> AlertBox.contentAdd());
 
-            // Imports library from a .txt file
+            // Imports library from a .txt file.
             importLibrary.setOnAction(e -> AlertBox.generalNotification("Library Imported", "Library has been imported into the program"));
 
             // Exports library to a .txt file
