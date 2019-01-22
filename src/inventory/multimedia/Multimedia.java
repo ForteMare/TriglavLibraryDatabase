@@ -6,12 +6,14 @@ public class Multimedia extends Inventory {
     private String publisher;
     private String subDefine;
 
+    // Empty constructor sets default information without which the program wouldn't work properly. Calls standard constructor
     public Multimedia() {
-        this("Unknown title", "Unknown unknown subDefine");
+        this("Unknown publisher", "Unknown unknown subDefine");
         setInternalID(2);
         setType(getClass().getSimpleName());
     }
 
+    // Standard constructor takes in information available in this class
     public Multimedia(String publisher, String subDefine) {
         this.publisher = publisher;
         this.subDefine = subDefine;
@@ -19,6 +21,7 @@ public class Multimedia extends Inventory {
         setType(getClass().getSimpleName());
     }
 
+    // Extended constructor takes in information from class and superclass
     public Multimedia(String title, String publisher, String subDefine) {
         this(publisher, subDefine);
         setTitle(title);

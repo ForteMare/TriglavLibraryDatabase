@@ -9,14 +9,16 @@ package inventory;
 public abstract class Inventory {
 
     private int internalID; // This variable identifies type of an object (book, music) by using an integer. Not available to end-user.
-    private String type; // This String tells end-user what object s/he is interacting with.
+    private String type; // This String tells end-user what object s/he is interacting with. Holds class name
     private String title; // The lowest common denominator of this library is 'title'. Every inventory object has a title, no matter the type.
     private String availability; // Whether object is reserved or checked out...
 
+    // Default constructor
     public Inventory() {
         this(0, Inventory.class.getName(), "Unknown Title", "Available");
     }
 
+    // Full constructor
     public Inventory(int internalID, String type, String title, String availability) {
         this.internalID = internalID;
         this.type = type;
@@ -57,6 +59,7 @@ public abstract class Inventory {
         this.availability = availability;
     }
 
+    // Abstract methods that are going to be used in sub-classes
     public abstract StringBuilder returnFinalInfo();
     public abstract StringBuilder returnRawInfo();
     public abstract void addToDatabase();
