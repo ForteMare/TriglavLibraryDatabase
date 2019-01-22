@@ -57,8 +57,6 @@ public class MainGUI extends Application {
             exportLibrary.setPrefSize(90, 30);
             about.setPrefSize(90, 30);
             exit.setPrefSize(90, 30);
-
-            // Inventory buttons should maybe be different size
             delete.setPrefSize(90, 30);
 
             // Adding Table View of Inventory to the main screen
@@ -84,16 +82,45 @@ public class MainGUI extends Application {
 
             // Control button commands
 
-            // ##
+            /*
+            Code block below removes a selected item from the entire database. I was experimenting with this code
+            long time ago and it worked, but it requires double-checking regarding its effectiveness and limitations.
+             */
+
+            // Removing items from the inventory (global and local)
             delete.setOnAction(event -> {
                 Inventory selectedItem = table.getSelectionModel().getSelectedItem();
                 table.getItems().remove(selectedItem);
 
+                // Global database
                 LibraryDatabase.getInventoryList().remove(selectedItem);
-                LibraryDatabase.getNovelList().remove(selectedItem);
-                LibraryDatabase.getMovieList().remove(selectedItem);
 
-                //??????????
+                // Local databases
+
+                // Audio database
+                LibraryDatabase.getAudioList().remove(selectedItem);
+                LibraryDatabase.getAudiobookList().remove(selectedItem);
+                LibraryDatabase.getMusicList().remove(selectedItem);
+                LibraryDatabase.getPodcastList().remove(selectedItem);
+
+                // Video database
+                LibraryDatabase.getArchiveFootageList().remove(selectedItem);
+                LibraryDatabase.getDocumentaryList().remove(selectedItem);
+                LibraryDatabase.getMovieList().remove(selectedItem);
+                LibraryDatabase.getVideoList().remove(selectedItem);
+
+                // Book database
+                LibraryDatabase.getBookList().remove(selectedItem);
+                LibraryDatabase.getChildrenLitList().remove(selectedItem);
+                LibraryDatabase.getNovelList().remove(selectedItem);
+                LibraryDatabase.getTouristGuideList().remove(selectedItem);
+
+                // Periodical database
+                LibraryDatabase.getComicList().remove(selectedItem);
+                LibraryDatabase.getMagazineList().remove(selectedItem);
+                LibraryDatabase.getNewspaperList().remove(selectedItem);
+                LibraryDatabase.getPeriodicalList().remove(selectedItem);
+
             });
 
 
