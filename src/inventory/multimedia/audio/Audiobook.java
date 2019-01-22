@@ -19,6 +19,7 @@ public class Audiobook extends Audio {
 
     public Audiobook() {
         this(0.00, "Unknown narrator");
+
         setInternalID(14);
         setType(getClass().getSimpleName());
     }

@@ -67,7 +67,7 @@ public abstract class Inventory {
     printing info to .txt and having it look nice.
     - returnRawInfo() holds the same data as returnFinalInfo() but without descriptive strings.
     Originally, latter was to be used with I/O, .txt reading specifically.
-    - addToDatabase() is currently inactive and may be deleted.
+    - addToDatabase() adds the object to the collective database.
      */
     public abstract StringBuilder returnFinalInfo();
     public abstract StringBuilder returnRawInfo();

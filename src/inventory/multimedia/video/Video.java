@@ -95,6 +95,12 @@ public class Video extends Multimedia {
         return sb;
     }
 
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained. They hold the data and they
+    partially display it.
+     */
+
     public static void displayVideoInventory() {
 
         // Set up the primary stage
