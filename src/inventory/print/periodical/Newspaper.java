@@ -18,12 +18,14 @@ public class Newspaper extends Periodical {
 
     public Newspaper() {
         this(false);
+
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
 
     public Newspaper(boolean tabloid) {
         this.tabloid = tabloid;
+
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
@@ -31,6 +33,7 @@ public class Newspaper extends Periodical {
     public Newspaper(String title, String author, String genre, String publicationFrequency, boolean tabloid) {
         super(title, author, genre, publicationFrequency);
         this.tabloid = tabloid;
+
         setInternalID(9);
         setType(getClass().getSimpleName());
     }
@@ -80,6 +83,12 @@ public class Newspaper extends Periodical {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayNewspaperInventory() {
 

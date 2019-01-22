@@ -19,12 +19,14 @@ public class Periodical extends Print {
 
     public Periodical() {
         this("None");
+
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
 
     public Periodical(String publicationFrequency) {
         this.publicationFrequency = publicationFrequency;
+
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
@@ -32,6 +34,7 @@ public class Periodical extends Print {
     public Periodical(String title, String author, String subType, String publicationFrequency) {
         super(title, author, subType);
         this.publicationFrequency = publicationFrequency;
+
         setInternalID(5);
         setType(getClass().getSimpleName());
     }
@@ -77,6 +80,12 @@ public class Periodical extends Print {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayPeriodicalInventory() {
 

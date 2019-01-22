@@ -19,6 +19,7 @@ public class Comic extends Periodical {
 
     public Comic() {
         this(false, false);
+
         setInternalID(17);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class Comic extends Periodical {
     public Comic(boolean manga, boolean graphicNovel) {
         this.manga = manga;
         this.graphicNovel = graphicNovel;
+
         setInternalID(17);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class Comic extends Periodical {
         super(title, author, genre, publicationFrequency);
         this.manga = manga;
         this.graphicNovel = graphicNovel;
+
         setInternalID(17);
         setType(getClass().getSimpleName());
     }
@@ -94,6 +97,12 @@ public class Comic extends Periodical {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayComicInventory() {
 
