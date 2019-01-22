@@ -30,6 +30,8 @@ public class Print extends Inventory {
 
     }
 
+    // Getters and setters relevant only to this class
+
     public String getAuthor() {
         return author;
     }

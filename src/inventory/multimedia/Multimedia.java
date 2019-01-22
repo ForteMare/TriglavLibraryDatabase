@@ -30,6 +30,8 @@ public class Multimedia extends Inventory {
 
     }
 
+    // Getters and setters relevant only to this class
+
     public String getPublisher() {
         return publisher;
     }

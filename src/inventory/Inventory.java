@@ -60,6 +60,15 @@ public abstract class Inventory {
     }
 
     // Abstract methods that are going to be used in sub-classes
+
+    /*
+    CLARIFICATION:
+    - returnFinalInfo() holds data on classes but with String-type descriptions attached. Useful for
+    printing info to .txt and having it look nice.
+    - returnRawInfo() holds the same data as returnFinalInfo() but without descriptive strings.
+    Originally, latter was to be used with I/O, .txt reading specifically.
+    - addToDatabase() is currently inactive and may be deleted.
+     */
     public abstract StringBuilder returnFinalInfo();
     public abstract StringBuilder returnRawInfo();
     public abstract void addToDatabase();
