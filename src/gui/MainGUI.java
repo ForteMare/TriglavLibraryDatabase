@@ -7,6 +7,7 @@ Triglav Library Database has two main classes.
 
 package gui;
 
+import inventory.InternalLibrary;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 import javafx.application.Application;
@@ -28,6 +29,15 @@ public class MainGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+        /*
+        This is a default inventory that comes with this program.
+        - It serves for testing the program
+        - It is a part of the grading criteria to have some data in the Library Database
+         */
+
+        InternalLibrary.startDatabase();
+
         try {
             // General control buttons
             Button library = new Button("View...");

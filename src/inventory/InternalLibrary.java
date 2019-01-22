@@ -35,7 +35,7 @@ public class InternalLibrary {
         Print print = new Print("Journal of Science", "Multiple Authors", "Academia");
         print.addToDatabase();
 
-        Book book = new Book("Na Drini cuprija", "Ivo Andric", "Historical Fiction", true, 1953, "CD-PPT");
+        Book book = new Book("Na Drini ćuprija", "Ivo Andrić", "Historical Fiction", true, 1953, "CD-PPT");
         book.addToDatabase();
 
         Periodical periodical = new Periodical("Scientific American", "Multiple Authors", "Popular Science", "Weekly");
