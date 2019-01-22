@@ -19,6 +19,7 @@ public class TouristGuide extends Book {
 
     public TouristGuide() {
         this("Unknown region", false);
+
         setInternalID(7);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class TouristGuide extends Book {
     public TouristGuide(String region, boolean includesMap) {
         this.region = region;
         this.includesMap = includesMap;
+
         setInternalID(7);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class TouristGuide extends Book {
         super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.region = region;
         this.includesMap = includesMap;
+
         setInternalID(7);
         setType(getClass().getSimpleName());
     }
@@ -95,6 +98,12 @@ public class TouristGuide extends Book {
         return sb;
     }
 
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
+
     public static void displayTouristGuideInventory() {
 
         // Set up the primary stage
@@ -123,7 +132,7 @@ public class TouristGuide extends Book {
         TableColumn<TouristGuide, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(120);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
-//
+
         //Author column
         TableColumn<TouristGuide, String> authorColumn = new TableColumn<>("Author");
         authorColumn.setMinWidth(120);

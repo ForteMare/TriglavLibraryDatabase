@@ -25,6 +25,7 @@ public class Novel extends Book {
 
     public Novel(String language) {
         this.language = language;
+
         setInternalID(11);
         setType(getClass().getSimpleName());
     }
@@ -32,6 +33,7 @@ public class Novel extends Book {
     public Novel(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, String language) {
         super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.language = language;
+
         setInternalID(11);
         setType(getClass().getSimpleName());
 
@@ -79,6 +81,12 @@ public class Novel extends Book {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayNovelInventory() {
 

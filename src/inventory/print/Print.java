@@ -9,6 +9,7 @@ public class Print extends Inventory {
     // Empty constructor sets default information without which the program wouldn't work properly. Calls standard constructor
     public Print() {
         this("Unknown author", "Unknown subType");
+
         setInternalID(1);
         setType(getClass().getSimpleName());
     }
@@ -17,6 +18,7 @@ public class Print extends Inventory {
     public Print(String author, String subType) {
         this.author = author;
         this.subType = subType;
+
         setInternalID(1);
         setType(getClass().getSimpleName());
     }
@@ -24,6 +26,7 @@ public class Print extends Inventory {
     // Extended constructor takes in information from class and superclass
     public Print(String title, String author, String subType) {
         this(author, subType);
+
         setTitle(title);
         setInternalID(1);
         setType(getClass().getSimpleName());

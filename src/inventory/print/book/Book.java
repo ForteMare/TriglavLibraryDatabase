@@ -21,6 +21,7 @@ public class Book extends Print {
 
     public Book() {
         this(false, 1991, "Unknown Location");
+
         setInternalID(3);
         setType(getClass().getSimpleName());
     }
@@ -29,6 +30,7 @@ public class Book extends Print {
         this.hardCover = hardCover;
         this.yearPublished = yearPublished;
         this.ddcLocation = ddcLocation;
+
         setInternalID(3);
         setType(getClass().getSimpleName());
     }
@@ -38,6 +40,7 @@ public class Book extends Print {
         this.hardCover = hardCover;
         this.yearPublished = yearPublished;
         this.ddcLocation = ddcLocation;
+
         setInternalID(3);
         setType(getClass().getSimpleName());
 
@@ -113,6 +116,12 @@ public class Book extends Print {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayBookInventory() {
 

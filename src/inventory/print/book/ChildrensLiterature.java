@@ -19,6 +19,7 @@ public class ChildrensLiterature extends Book {
 
     public ChildrensLiterature() {
         this(false, false);
+
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class ChildrensLiterature extends Book {
     public ChildrensLiterature(boolean illustration, boolean interactive) {
         this.illustration = illustration;
         this.interactive = interactive;
+
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class ChildrensLiterature extends Book {
         super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.illustration = illustration;
         this.interactive = interactive;
+
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
@@ -94,6 +97,12 @@ public class ChildrensLiterature extends Book {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayChildrensLitInventory() {
 
