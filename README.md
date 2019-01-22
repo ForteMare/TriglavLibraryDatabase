@@ -20,7 +20,7 @@ The program has to have the following properties:
 
 # Running The Program
 
-- The program has two main() classes.
+- The program has two main classes.
 - Class _MainGUI_ interacts with program with JavaFX GUI.
 - Class _Main_ interacts with program without GUI. This class is mandatory for the assignment.
 
