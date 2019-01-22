@@ -20,12 +20,14 @@ public class Podcast extends Audio {
     public Podcast() {
         this(false, false);
         setInternalID(18);
+
         setType(getClass().getSimpleName());
     }
 
     public Podcast(boolean availableOffline, boolean featuredOnItunes) {
         this.availableOffline = availableOffline;
         this.featuredOnItunes = featuredOnItunes;
+
         setInternalID(18);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class Podcast extends Audio {
         super(title, publisher, subDefine, format);
         this.availableOffline = availableOffline;
         this.featuredOnItunes = featuredOnItunes;
+
         setInternalID(18);
         setType(getClass().getSimpleName());
     }
@@ -94,6 +97,12 @@ public class Podcast extends Audio {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayPodcastInventory() {
 

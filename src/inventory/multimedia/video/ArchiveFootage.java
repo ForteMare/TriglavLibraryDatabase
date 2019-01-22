@@ -19,6 +19,7 @@ public class ArchiveFootage extends Video {
 
     public ArchiveFootage() {
         this(false, false);
+
         setInternalID(16);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class ArchiveFootage extends Video {
     public ArchiveFootage(boolean regionalHistory, boolean propaganda) {
         this.regionalHistory = regionalHistory;
         this.propaganda = propaganda;
+
         setInternalID(16);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class ArchiveFootage extends Video {
         super(title, publisher, subDefine, director, screenwriter);
         this.regionalHistory = regionalHistory;
         this.propaganda = propaganda;
+
         setInternalID(16);
         setType(getClass().getSimpleName());
     }
@@ -93,6 +96,12 @@ public class ArchiveFootage extends Video {
                 .append("\r\n");
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayInventory() {
 

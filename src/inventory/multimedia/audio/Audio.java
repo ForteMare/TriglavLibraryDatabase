@@ -83,8 +83,8 @@ public class Audio extends Multimedia {
 
     /*
     Every inventory subclass has FX methods. This was originally held in a class of its own,
-    to reduce space and confusion, now classes are more self-contained. They hold the data and they
-    partially display it.
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
      */
 
     public static void displayAudioInventory() {

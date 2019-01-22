@@ -98,6 +98,12 @@ public class Audiobook extends Audio {
         return sb;
     }
 
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
+
     public static void displayInventory() {
 
         // Set up the primary stage

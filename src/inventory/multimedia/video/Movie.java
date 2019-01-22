@@ -19,6 +19,7 @@ public class Movie extends Video {
 
     public Movie() {
         this(10.0, false);
+
         setInternalID(8);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class Movie extends Video {
     public Movie(double ratingIMDB, boolean hollywoodProduction) {
         this.ratingIMDB = ratingIMDB;
         this.hollywoodProduction = hollywoodProduction;
+
         setInternalID(8);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class Movie extends Video {
         super(title, publisher, subDefine, director, screenwriter);
         this.ratingIMDB = ratingIMDB;
         this.hollywoodProduction = hollywoodProduction;
+
         setInternalID(8);
         setType(getClass().getSimpleName());
     }
@@ -94,6 +97,12 @@ public class Movie extends Video {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayMovieInventory() {
 

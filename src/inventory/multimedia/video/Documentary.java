@@ -18,12 +18,14 @@ public class Documentary extends Video {
 
     public Documentary() {
         this(false);
+
         setInternalID(12);
         setType(getClass().getSimpleName());
     }
 
     public Documentary(boolean color) {
         this.color = color;
+
         setInternalID(12);
         setType(getClass().getSimpleName());
     }
@@ -79,6 +81,12 @@ public class Documentary extends Video {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayDocumentaryInventory() {
 

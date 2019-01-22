@@ -19,6 +19,7 @@ public class Music extends Audio {
 
     public Music() {
         this("Unknown artist", "Unknown album");
+
         setInternalID(10);
         setType(getClass().getSimpleName());
     }
@@ -26,6 +27,7 @@ public class Music extends Audio {
     public Music(String artist, String album) {
         this.artist = artist;
         this.album = album;
+
         setInternalID(10);
         setType(getClass().getSimpleName());
     }
@@ -34,6 +36,7 @@ public class Music extends Audio {
         super(title, publisher, subDefine, format);
         this.artist = artist;
         this.album = album;
+
         setInternalID(10);
         setType(getClass().getSimpleName());
     }
@@ -96,6 +99,12 @@ public class Music extends Audio {
 
         return sb;
     }
+
+    /*
+    Every inventory subclass has FX methods. This was originally held in a class of its own,
+    to reduce space and confusion, now classes are more self-contained.
+    This method contains code *only* for displaying the window that contains a table with class content.
+     */
 
     public static void displayInventory() {
 
